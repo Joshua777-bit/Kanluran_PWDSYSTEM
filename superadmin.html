@@ -1,0 +1,1870 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="./superadmin.css" rel="stylesheet">
+        <script src="./javascript/driver.js" defer type="module"></script>
+        <script src="./javascript/animations.js" defer type="module"></script>
+    </head>
+    <body class="bg-slate-100  font-poppins overflow-x-hidden selection:bg-slate-900 selection:text-slate-100">
+        <header>
+            <nav class="z-50 fixed flex justify-end w-screen">
+                <div>
+                    <div id = "navBtn" class="  lg:hidden flex justify-center items-center h-10 w-10 mt-9 mr-6 md:mr-10 md:mt-15 rounded-xl sm:mr-7 sm:mt-12 sm:w-13 sm:h-13 hover:bg-slate-100 group bg-slate-900/20">
+                        <div class = "mask-[url('../resources/bars-3.svg')] mask-contain bg-slate-50 size-7 group-hover:bg-slate-900 inline mask-no-repeat"></div>
+                    </div>
+                    <div id="navModal" class="lg:shadow-xl self-center lg:top-5 xl:h-10 hidden  lg:justify-around lg:items-center lg:ml-12 lg:mr-10 xl:mr-10 xl:ml-17 lg:w-[90vw]   lg:rounded-4xl lg:flex lg:bg-slate-50 lg:h-10  w-screen left-0 h-[60vh] fixed top-0 text-slate-200 sm:rounded-b-3xl rounded-b-2xl bg-slate-900">
+                        <div class="flex ">
+                            <h1 class=" lg:top-0 lg:text-slate-900 md:text-3xl lg:text-xl justify-self-start left-[9vw] lg:left-0 sm:left-[8vw] md:left-[9vw] top-[7vh] relative font-rubik text-2xl font-semibold tracking-tighter">
+                                <span class="text-slate-900 lg:hidden bg-slate-200  font-poppins font-semibold text-[7px] md:text-[2xl] tracking-[0.5vw] absolute -top-[1vh] "> BARANGAY </span> Kanluran
+                            </h1>
+                            <div id="navClose" class="lg:hidden justify-self-end left-[60vw] md:left-[73vw] top-[7vh] relative ">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                                </svg>
+                            </div>
+                        </div>
+                        <ul class="lg:flex  lg:leading-10 navlistContainer -left-20 lg:top-0 md:leading-25  lg:text-slate-900 lg:gap-5 text-lg md:text-2xl lg:text-lg xl:text-lg relative md:left-20 md:top-40 top-30 sm:top-30 lg:left-0  sm:left-15 leading-15">
+                            <li class="group/home transition-all">
+                                <a href="#home">Home</a>
+                                <div class="lg:hidden group-hover/home:bg-slate-200 w-[80vw] h-0.5 bg-slate-200/35"></div>
+                            </li>
+                            <li class="group/home transition-all">
+                                <a href="#dashboard">Dashboard</a>
+                                <div class="lg:hidden group-hover/home:bg-slate-200 w-[80vw] h-0.5 bg-slate-200/35"></div>
+                            </li>
+                            <li class="group/news transition-all">
+                                <a href="#benefitsStatus"> Status </a>
+                                <div class="lg:hidden group-hover/news:bg-slate-200 w-[80vw] h-0.5 bg-slate-200/35"></div>
+                            </li>
+                            <li class="group/benefitsManager transition-all">
+                                <a href="#benefitsManager" class="text-nowrap"> Benefits Manager </a>
+                                <div class="lg:hidden group-hover/benefitsManager:bg-slate-200 w-[80vw] h-0.5 bg-slate-200/35"></div>
+                            </li>
+                            <li class="group/accountsManager transition-all">
+                                <a href="#accountsManager" class="text-nowrap"> Accounts Manager </a>
+                                <div class="lg:hidden group-hover/accountsManager:bg-slate-200 w-[80vw] h-0.5 bg-slate-200/35"></div>
+                            </li>
+                            <li class="group/aboutus transition-all">
+                                <a href="#aboutUs" class="text-nowrap"> About us </a>
+                                <div class="lg:hidden group/aboutus:bg-slate-200 w-[80vw] h-0.5 bg-slate-200/35"></div>
+                            </li>
+                        </ul>
+                        <div id="profile" class="w-40 lg:w-20 lg:flex flex-row relative items-center">
+                            <h2 class="text-slate-900 truncate">Joshua Marasigan</h2>
+                            <img src="/resources/heroImage.png" class=" size-9 rounded-full">
+                        </div>
+                        <div id="settings" class="hidden  hover:scale-101 transition-all bg-slate-100/90 backdrop-blur-xs  items-center  flex-col text-slate-900 w-90 h-55 absolute top-15 rounded-4xl shadow-2xl right-0">
+                            <div class="flex flex-row w-90 justify-end  ">
+                                <div class="flex  mt-4.5 text-xl">
+                                    <p class="font-semibold">Settings</p>
+                                </div>
+                                <div id="settingsExit" class=" flex items-center ml-20 w-7 mr-9">
+                                    <div class="[mask-image:url('/resources/x-mark.svg')]  mt-5 mask-contain bg-slate-900 h-5 w-5"></div>
+                                </div>
+                            </div>
+                            <div class="flex-col gap-2 flex items-center h-40 justify-center">
+                                <div>
+                                    <p>Profile</p>
+                                    <div class="w-70 bg-slate-900 h-0.5"></div>
+                                </div>
+                                <div>
+                                    <p>Account</p>
+                                    <div class="w-70 bg-slate-900 h-0.5"></div>
+                                </div>
+                                <div>
+                                    <p>Change Password</p>
+                                    <div class="w-70 bg-slate-900 h-0.5"></div>
+                                </div>
+                                <div class="flex gap-2 self-end mt-5">
+                                    <div class="[mask-image:url('/resources/arrow-left-rectangle.svg')] mask-no-repeat mask-contain bg-slate-900 w-5 h-5"></div>
+                                    <p>Logout</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="navModalexit hidden -z-40 lg:hidden w-screen h-[120vh] fixed left-0 top-0 bg-black/50 backdrop-blur-xs"></div>
+            
+                    </div>
+                </div>
+            </nav>
+            <div id="home" class="sectionContainer md:h-screen">
+                <!--Hero Image-->
+                <div class="-z-10 fixed top-0 ">
+                    <img src="/resources/heroImage.png" class="w-screen grayscale-100 h-[120vh] md:object-[-90vh_-8vh] object-[-107vh_-8vh] xl:object-center sm:object-[-30vw_-8vh] object-cover">
+                    <div class="bg-slate-100/20 md:bg-linear-to-t from-slate-100/90 to-slate-100/50 w-screen h-screen absolute top-0"></div>
+                </div>
+                <div class="relative sm:h-[61vh] md:h-[25vh] h-[60vh]"></div>
+                <!--Hero Texts and CTA-->
+                <div class=" md:left-15 lg:left-0 lg:text-center  lg:w-screen xl:left-0  md:bg-transparent md:fixed  overflow-y-visible bg-slate-100 rounded-t-[2em] text-slate-900 h-[46vh] xl:h-[55vh] flex flex-col justify-center items-center relative">
+                    <div class="md:hidden absolute sm:h-1.5  h-1 w-[20vw] top-[3vh] bg-slate-900"></div>
+                    <div class="flex-row justify-center flex items-center">
+                        <div class="relative font-hanken -top-3">
+                            <h1 class="bg-slate-900 pr-3 lg:pr-5 lg:pl-9 pl-5  text-2xl font-poppins tracking-[0.5em] inline-block text-slate-200">PWD</h1>
+                            <h1 class="text-5xl  md:mt-0 md:text-7xl tracking-[0.09em]">FINANCIAL <br>
+                                <span class="text-5xl md:text-7xl  md:-top-4 -left-1 tracking-[0.01em] relative -top-2">ASSISTANCE</span>
+                            </h1>
+                            <h1 class="text-3xl lg:text-4xl lg:-mt-5 md:-mt-7 -mt-4 font-poppins font-semibold">System</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main class="relative md:text-xl  lg:text-lg -top-2 font-poppins  bg-slate-100 pb-20 text-slate-900">
+            <!--Dashboard-->
+            <section id="dashboard" class="flex  flex-col items-center sectionContainer top-10 w-screen relative">
+                <!--System Dashboard Text-->
+                <div class="flex flex-col items-center mb-10 justify-center">
+                    <h2 class=" relative font-poppins top-2 md:top-2 mb-1 text-2xl md:text-3xl lg:text-3xl ">System</h2>
+                    <h2 class=" font-hanken text-3xl sm:text-[2em] md:text-4xl lg:text-4xl  ">DASHBOARD</h2>
+                    <div class=" md:w-15 bg-slate-900 w-12 h-1 sm:w-13 top-2 lg:top-3 relative mb-15"></div>
+                </div>
+                <!--Dashboard Content-->
+                <div class="w-[85vw] flex flex-col">
+                    <!--Accounts Dashboard-->
+                    <div>
+                        <!--Accounts Dashboard Text-->
+                        <div class=" gap-3  relative  mb-15  flex col-span-3 items-center ">
+                            <h2 class=" relative font-poppins  text-2xl md:text-3xl  ">Accounts</h2>
+                            <h2 class=" font-hanken text-2xl md:text-3xl  ">DASHBOARD</h2>
+                            <div class=" md:w-20 bg-slate-900 w-12 lg:w-25 h-0.5 sm:w-13 "></div>
+                        </div>
+                        <!--Accounts Dashboard Content-->
+                        <div class="flex flex-col  lg:grid lg:grid-cols-3 gap-2  grid-rows-2 w-[85vw]">
+                            <!--Accounts Overview-->
+                            <div class=" gap-2  bg-slate-900 p-2 lg:h-90 rounded-2xl col-span-1  row-span-1">
+                                <div class="lg:col-span-3  text-slate-100 text-xl flex items-end  mb-10 font-semibold h-10">
+                                    <p class = "md:text-2xl">Overall Accounts</p>
+                                </div>
+                                <!--Dashboard Overall Accounts Content-->
+                                <div class="flex flex-col lg:grid lg:col-span-3  rounded-4xl grid-cols-4 gap-2   justify-center ">
+                                    <div class="bg-slate-200  font-semibold overflow-hidden rounded-2xl col-span-2  flex  justify-center items-start flex-col">
+                                        <p class=" ml-3 relative leading-4 top-2 text-sm sm:text-lg md:text-xl">Inactive Account</p>
+                                        <p class=" ml-2 text-7xl top-1 relative ">10</p>
+                                        <p class=" ml-3 bottom-2 relative font-normal text-lg sm:text-lg md:text-xl ">Accounts</p>
+                                    </div>
+                                    <div class="bg-slate-200  font-semibold overflow-hidden rounded-2xl col-span-2 flex  justify-center  items-start flex-col">
+                                        <p class=" ml-3 relative leading-4 top-2 text-sm sm:text-lg md:text-xl">Active Account</p>
+                                        <p class=" ml-2 text-7xl top-1 relative ">495</p>
+                                        <p class=" ml-3 bottom-2 relative font-normal text-lg sm:text-lg md:text-xl">Accounts</p>
+                                    </div>
+                                    <div class="bg-slate-100  font-semibold overflow-hidden rounded-2xl col-span-4  flex  justify-center items-start flex-col">
+                                        <p class=" ml-3 relative leading-4 top-2 text-sm sm:text-lg md:text-xl">Total Account</p>
+                                        <p class=" ml-2 text-7xl top-1 relative  ">505</p>
+                                        <p class=" ml-3 bottom-2 relative font-normal text-lg sm:text-lg md:text-xl">Accounts</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--Accounts per Imparements-->
+                            <div class="lg:col-span-2 p-2 bg-slate-50  h-110 rounded-2xl row-span-1">
+                                <div class="flex flex-col items-center   gap-10 ">
+                                    <div class="flex  md:flex-row flex-col w-[82vw] lg:w-[55vw]  mt-3 ">
+                                        <p class="text-xl font-semibold text-nowrap ">Accounts per Imparements</p>
+                                        <div class=" ml-auto ">
+                                            <input class="lg:w-[10vw] mr-2" type="month">
+                                            <select>
+                                                <option>Weekly</option>
+                                                <option>Monthly</option>
+                                                <option>Yearly</option>
+                                                <option>Total</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="w-[55vw]  flex justify-center">
+                                        <div>
+                                            <canvas id="imparementsTrack"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--Streets Accounts-->
+                            <div class="lg:col-span-1 relative  lg:-top-55 bg-slate-50 p-2 h-145 rounded-2xl row-span-1">
+                                <div class="col-span-3   text-xl flex items-end  mb-10 font-semibold h-10">
+                                    <p class = "text-xl">Streets Accounts</p>
+                                </div>
+                                <div class="flex flex-col overflow-y-auto rounded-2xl h-115 gap-2">
+                                    <!--Dashboard Streets Accounts Content-->
+                                      <div class="bg-slate-200 font-semibold col-span-2  md:text-xl gap-1 text-lg  rounded-2xl flex justify-around  items-start flex-col">
+                                        <p class=" ml-4 relative  mt-1">F. Gomez Street</p>
+                                        <div class=" flex flex-col mb-1 items-center">
+                                            <p class="text-7xl   ">72</p>
+                                            <p class=" ml-4 relative bottom-1 font-normal  leading-5 ">Accounts </p>
+                                        </div>
+                                    </div>
+                                    <div class="bg-slate-200 font-semibold col-span-2  md:text-xl gap-1 text-lg  rounded-2xl flex justify-around  items-start flex-col">
+                                        <p class=" ml-4 relative mt-1">Lucero Street</p>
+                                        <div class=" flex flex-col mb-1 items-center">
+                                            <p class="text-7xl ">72</p>
+                                            <p class=" ml-4 relative bottom-1 font-normal  leading-5 ">Accounts </p>
+                                        </div>
+                                    </div>
+                                    <div class="bg-slate-200 font-semibold col-span-2  md:text-xl gap-1 text-lg  rounded-2xl flex justify-around  items-start flex-col">
+                                        <p class=" ml-4 relative  mt-1">P. Vallejo Street</p>
+                                        <div class=" flex flex-col mb-1 items-center">
+                                            <p class="text-7xl   ">72</p>
+                                            <p class=" ml-4 relative bottom-1 font-normal text-md leading-5 ">Accounts </p>
+                                        </div>
+                                    </div>
+                                    <div class="bg-slate-200 font-semibold col-span-2  md:text-xl gap-1 text-lg  rounded-2xl flex justify-around  items-start flex-col">
+                                        <p class=" ml-4 relative  mt-1">Rizal Blvd</p>
+                                        <div class=" flex flex-col mb-1 items-center">
+                                            <p class="text-7xl  ">72</p>
+                                            <p class=" ml-4 relative bottom-1 font-normal leading-5 ">Accounts </p>
+                                        </div>
+                                    </div>
+                                    <div class="bg-slate-200 font-semibold col-span-2  md:text-xl gap-1 text-lg  rounded-2xl flex justify-around  items-start flex-col">
+                                        <p class=" ml-4 relative  mt-1">Arambulo Street</p>
+                                        <div class=" flex flex-col mb-1 items-center">
+                                            <p class="text-7xl  ">72</p>
+                                            <p class=" ml-4 relative bottom-1 font-normal leading-5 ">Accounts </p>
+                                        </div>
+                                    </div>
+                                    <div class="bg-slate-200 font-semibold col-span-2  md:text-xl gap-1 text-lg  rounded-2xl flex justify-around  items-start flex-col">
+                                        <p class=" ml-4 relative mt-1">Anonuevo Street</p>
+                                        <div class=" flex flex-col mb-1 items-center">
+                                            <p class="text-7xl  ml-4 ">72</p>
+                                            <p class=" ml-4 relative bottom-1 font-normal  leading-5 ">Accounts </p>
+                                        </div>
+                                    </div>
+                                    <div class="bg-slate-200 font-semibold col-span-2  md:text-xl gap-1 text-lg  rounded-2xl flex justify-around  items-start flex-col">
+                                        <p class=" ml-4 relative mt-1">Dr. Zavalla Street</p>
+                                        <div class=" flex flex-col mb-1 items-center">
+                                            <p class="text-7xl ">72</p>
+                                            <p class=" ml-4 relative bottom-1 font-normal leading-5 ">Accounts </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--Accounts Creation-->
+                            <div class="col-span-2 lg:h-125   relative lg:-top-35 bg-slate-50 p-2 mb-15 lg:p-2 grid rounded-2xl row-span-1">
+                                <div class="flex flex-col items-center gap-10">
+                                    <div class="flex flex-col md:flex-row mt-3  w-[85vw]  lg:w-[55vw] ">
+                                        <p class="text-lg sm:text-xl font-semibold text-nowrap">Accounts Creation</p>
+                                        <div class="ml-auto">
+                                            <input class=" lg:w-[10vw] mr-2" type="month">
+                                            <select class="mr-2">
+                                                <option>Weekly</option>
+                                                <option>Monthly</option>
+                                                <option>Yearly</option>
+                                                <option>Total</option>
+                                            </select>
+                                            <select class="mr-5 w-[10vw]">
+                                                <option>Visual Imparement</option>
+                                                <option>Mobility Imparement</option>
+                                                <option>Psychological Imparement</option>
+                                                <option>Neurological Imparement</option>
+                                                <option>Speech and Language Imparement</option>
+                                                <option>Hearing Imparement</option>
+                                                <option>Cognitive Imparement</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="  w-[80vw] lg:w-[55vw]  flex ">
+                                        <canvas id="accountsTrack"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Benefits Dashboard-->
+                    <div class="mb-25 ">
+                        <!--Benefits Dashboard Text-->
+                        <div class=" gap-3  relative  mb-15  flex col-span-3 items-center ">
+                            <h2 class=" relative font-poppins  text-2xl md:text-3xl  ">Benefits</h2>
+                            <h2 class=" font-hanken text-2xl md:text-3xl  ">DASHBOARD</h2>
+                            <div class=" md:w-20 bg-slate-900 w-12 lg:w-25 h-0.5 sm:w-13 "></div>
+                        </div>
+                        <!--Benefits Dashboard Content-->
+                        <div class="flex lg:flex-row flex-col w-[85vw]  mb-15 justify-center gap-2 ">
+                            <div class="w-[85vw] lg:w-[25vw]">
+                                <div class="bg-slate-50 p-2 flex flex-col gap-2 rounded-2xl">
+                                    <div class="bg-slate-900 text-slate-100 font-semibold col-span-2 gap-5 md:gap-2 text-lg  rounded-2xl flex justify-around items-start flex-col">
+                                        <p class=" ml-4 relative text-sm md:text-lg mt-1 leading-5">Total Amount Distributed </p>
+                                        <div class=" flex flex-col mb-1 items-start">
+                                            <p class="text-6xl  ml-4 ">120,000</p>
+                                            <p class=" ml-4 relative font-normal text-md leading-5 ">Accounts </p>
+                                        </div>
+                                    </div>
+                                    <div class="bg-slate-200 font-semibold col-span-2 gap-5 md:gap-2 text-lg  rounded-2xl flex justify-around items-start flex-col">
+                                        <p class=" ml-4 relative text-sm md:text-lg mt-1 leading-5">Yearly Average Distributed</p>
+                                        <div class=" flex flex-col  items-start">
+                                            <p class="text-6xl  ml-4 ">50,000</p>
+                                            <p class=" ml-4 relative bottom-1 font-normal text-md leading-5 ">Pesos </p>
+                                        </div>
+                                    </div>
+                                    <div class="bg-slate-200 font-semibold col-span-2 gap-5 md:gap-2 text-lg  rounded-2xl flex justify-around items-start flex-col">
+                                        <p class=" ml-4 relative text-sm md:text-lg mt-1 leading-5">Monthly Average Distributed</p>
+                                        <div class=" flex flex-col  items-start">
+                                            <p class="text-6xl  ml-4 ">50,000</p>
+                                            <p class=" ml-4 relative bottom-1 font-normal text-md leading-5 ">Pesos </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex flex-col w-[85vw] lg:w-[60vw] bg-slate-50 rounded-2xl  p-2   gap-10">
+                                <div class="flex flex-col md:flex-row justify-center">
+                                    <p class="text-xl mt-2 font-semibold text-nowrap">Benefits Distribution</p>
+                                    <div class="ml-auto mt-2">
+                                        <input class="lg:w-[10vw] " type="month">
+                                        <select>
+                                            <option>Weekly</option>
+                                            <option>Monthly</option>
+                                            <option>Yearly</option>
+                                            <option>Total</option>
+                                        </select>
+                                        <select class=" w-[10vw] lg:w-[15vw]">
+                                            <option>Visual Imparement</option>
+                                            <option>Mobility Imparement</option>
+                                            <option>Psychological Imparement</option>
+                                            <option>Neurological Imparement</option>
+                                            <option>Speech and Language Imparement</option>
+                                            <option>Hearing Imparement</option>
+                                            <option>Cognitive Imparement</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="justify-center ">
+                                    <canvas id="benefitsTrack"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </section>
+            <!--Benefits Status -->
+            <section id="benefitsStatus" class=" sectionContainer">
+                <div class="flex flex-col items-center mb-10 justify-center">
+                    <h2 class=" relative font-poppins top-2 md:top-2 mb-1 text-2xl md:text-3xl lg:text-3xl ">Benefits</h2>
+                    <h2 class=" font-hanken text-3xl sm:text-2xl md:text-4xl lg:text-4xl  ">STATUS</h2>
+                    <div class=" md:w-15 bg-slate-900 w-12 h-1 sm:w-13 top-2 lg:top-3 relative mb-15"></div>
+                </div>
+                <div class="flex flex-col items-center ">
+                    <!--Latest Benefit Status-->
+                    <div class="w-[85vw] mb-15 flex flex-col items-center">
+                        <div class=" gap-3  w-[85vw] relative  mb-15  flex col-span-3 items-center ">
+                            <h2 class=" relative font-poppins  text-2xl md:text-3xl  ">Latest </h2>
+                            <h2 class=" font-hanken text-2xl md:text-3xl  ">BENEFITS</h2>
+                            <div class=" md:w-20 bg-slate-900 w-12 lg:w-25 h-0.5 sm:w-13 "></div>
+                        </div>
+                        <!--Table Manipulation Tools-->
+                        <div class="w-[85vw]">
+                            <div class="flex lg:flex-nowrap flex-wrap  relative mb-5 items-center  lg:mt-[5vh]">
+                                <div class="w-[60vw] mt-0 lg:w-[55vw]">
+                                    <form>
+                                        <fieldset>
+                                            <input type="text" placeholder="Search Name" class="pl-6 rounded-4xl lg:w-[40vw]  w-[60vw] h-10 focus:outline-slate-900 bg-white inset-ring-1 inset-ring-slate-200">
+                                        </fieldset>
+                                    </form>
+                                </div>
+                                <div   class="flex group  relative font-poppins ml-auto ">
+                                    <p id = "latestfilterBtn" class="flex  bg-slate-100  ">
+                                        <img class = "mask-[url('../resources/funnel.svg')]  mask-no-repeat bg-slate-900 hover:bg-slate-950 mask-contain size-6">
+                                        <p class = " hover:text-slate-950">Filter</p>
+                                    </p>
+
+                                    <div class = " gap-2 latestbnftfilterPanel flex-col absolute hidden top-7 bg-slate-50 rounded-2xl overflow-hidden z-10">
+                                        <div class = "group/bystatus  ">
+                                            <div class = "flex flex-row items-center border-b-[1px] delay-200 group-hover/bystatus:bg-slate-900 group-hover/bystatus:text-slate-100 border-slate-900 gap-4">
+                                                <p class = "text-nowrap py-2 pl-1.5   ">By Status</p>
+                                                <img class = "mask-[url('../resources/chevron-up.svg')] delay-200 group-hover/bystatus:bg-slate-100 transition-all pr-7 size-6 group-hover/bystatus:rotate-180 bg-slate-900 mask-contain mask-no-repeat ">
+                                            </div>
+                            
+                                            <div class = "invisible group-hover/bystatus:visible h-0 group-hover/bystatus:h-[30vh] overflow-y-scroll group-hover/bystatus:mb-5 group-hover/bystatus:flex delay-200 transition-all flex-col">
+                                                <div data-filtervalue = "All" data-filter-type = "bybnftStatus" class = " border-b-[1px] filtervalueContainer py-2 pl-1.5 pr-3 hover:bg-slate-900 hover:text-slate-100  border-slate-900">
+                                                    <p>All</p>
+                                                </div>
+                                                <div data-filtervalue = "Claimed" data-filter-type = "bybnftStatus" class = " border-b-[1px] filtervalueContainer py-2 pl-1.5 pr-3 hover:bg-slate-900 hover:text-slate-100  border-slate-900">
+                                                    <p>Claimed</p>
+                                                </div>
+                                                <div data-filtervalue = "Unclaimed" data-filter-type = "bybnftStatus" class = " border-b-[1px] filtervalueContainer py-2 pl-1.5 pr-3 hover:bg-slate-900 hover:text-slate-100  border-slate-900">
+                                                    <p>Unclaimed</p>
+                                                </div>
+                                            
+                                                <div data-filtervalue = "Available" data-filter-type = "bybnftStatus" class = " border-b-[1px] filtervalueContainer py-2 pl-1.5 pr-3 hover:bg-slate-900 hover:text-slate-100  border-slate-900">
+                                                    <p>Available</p>
+                                                </div>
+                                                <div data-filtervalue = "Unavailable" data-filter-type = "bybnftStatus"  class = " border-b-[1px]  filtervalueContainer py-2 pl-1.5 pr-3 hover:bg-slate-900 hover:text-slate-100  border-slate-900">
+                                                    <p>Unavailable</p>
+                                                </div>
+                                                <div data-filtervalue = "Delayed" data-filter-type = "bybnftStatus" class = "border-b-[1px] filtervalueContainer  py-2 pl-1.5 pr-3 hover:bg-slate-900 hover:text-slate-100  border-slate-900">
+                                                    <p>Delayed</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class = "group/bybenefit">
+                                            <div class = "flex gap-3 flex-row items-center delay-200 group-hover/bybenefit:bg-slate-900 group-hover/bybenefit:text-slate-100 border-b-[1px] border-slate-900">
+                                                <p class = "text-nowrap py-2 pl-1.5   ">By Benefit</p>
+                                                <img class = "mask-[url('../resources/chevron-up.svg')] delay-200 transition-all pr-3 group-hover/bybenefit:bg-slate-100 size-6 group-hover/bybenefit:rotate-180 bg-slate-900 mask-contain mask-no-repeat ">
+                                                
+                                            </div>
+                            
+                                            <div class = "overflow-y-auto latesttblfilterbnftContainer invisible group-hover/bybenefit:visible h-0 group-hover/bybenefit:h-[25vh] group-hover/bybenefit:flex delay-200 transition-all flex-col">
+                                                <div data-filtervalue = "All" data-filter-type = "bybnftName" class = "border-b-[1px]  filtervalueContainer py-2 pl-1.5 pr-3 hover:bg-slate-900 hover:text-slate-100  border-slate-900">All</div>
+                                            </div>
+                                        </div>
+                                        <div class = "w-screen h-screen filtermodalExit -z-10  fixed top-0 left-0"></div>
+                                        <p class = "filtermodalExit"></p>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-15">
+                            <div class="overflow-y-auto overflow-x-hidden  bg-slate-50 h-[70vh] w-[85vw] relative mx-auto rounded-2xl">
+                                <table id = "latesttbl" class="border-collapse  shadow-2xs bg-slate-50 w-[85vw] font-poppins text-center">
+                                    <thead class="sticky top-0 bg-slate-900 font-hanken text-white">
+                                        <tr>
+                                            <th class=" hidden md:table-cell">Transaction No.</th>
+                                            <th>Name</th>
+                                            <th class=" hidden md:table-cell">ID Number</th>
+                                            <th>Benefit</th>
+                                            <th>Date of Claim</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody >
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Incoming Benefit Status-->
+                    <div class="w-[85vw] mb-15 flex flex-col items-center">
+                        <div class=" gap-3  w-[85vw] relative  mb-15  flex col-span-3 items-center ">
+                            <h2 class=" relative font-poppins  text-2xl md:text-3xl  ">Incoming</h2>
+                            <h2 class=" font-hanken text-2xl md:text-3xl  ">BENEFITS</h2>
+                            <div class=" md:w-20 bg-slate-900 w-12 lg:w-25 h-0.5 sm:w-13 "></div>
+                        </div>
+                        <!--Table Manipulation Tools-->
+                        <div class="w-[85vw]">
+                            <div class="flex lg:flex-nowrap flex-wrap  relative mb-5 items-center  lg:mt-[5vh]">
+                                <div class="w-[60vw] mt-0 lg:w-[55vw]">
+                                    <form>
+                                        <fieldset>
+                                            <input type="text" placeholder="Search Name" class="pl-6 rounded-4xl xl:w-[40vw]  w-[60vw] h-10 focus:outline-slate-900 bg-white inset-ring-1 inset-ring-slate-200">
+                                        </fieldset>
+                                    </form>
+                                </div>
+                                <div class="flex group  relative font-poppins ml-auto ">
+                                    <p id = "incomingfilterBtn"  class="flex bg-slate-100  ">
+                                        <img class = "mask-[url('../resources/funnel.svg')] mask-no-repeat bg-slate-900 hover:bg-slate-950 mask-contain size-6">
+                                        <p class = "hover:text-slate-950">Filter</p>
+                                    </p>
+
+                                    <div class = " gap-2 hidden  incomingbnftfilterPanel flex-col absolute top-7 bg-slate-50 rounded-2xl overflow-hidden z-10">
+                                        <div class = "group/bybenefit">
+                                            <div class = "flex gap-1 flex-row items-center delay-200 group-hover/bybenefit:bg-slate-900 group-hover/bybenefit:text-slate-100 border-b-[1px] border-slate-900">
+                                                <p class = "text-nowrap py-2 pl-1.5   ">By Benefit</p>
+                                                <img class = "mask-[url('../resources/chevron-up.svg')] delay-200 transition-all pr-7 group-hover/bybenefit:bg-slate-100 size-6 group-hover/bybenefit:rotate-180 bg-slate-900 mask-contain mask-no-repeat ">
+                                                
+                                            </div>
+                            
+                                            <div class = "overflow-y-auto invisible incomingtblfilterbnftContainer group-hover/bybenefit:visible h-0 group-hover/bybenefit:h-[25vh] group-hover/bybenefit:flex delay-200 transition-all flex-col">
+        
+                                            </div>
+                                        </div>
+                                        <div class = "w-screen h-screen filtermodalExit -z-10  fixed top-0 left-0"></div>
+                                        <p class = "filtermodalExit "></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-15">
+                            <div class="overflow-y-auto  overflow-x-hidden bg-slate-50 h-[70vh] w-[85vw] relative mx-auto rounded-2xl">
+                                <table id = "incomingtbl" class="border-collapse shadow-2xs bg-slate-50 w-[87vw] text-wrap font-poppins text-center">
+                                    <thead class="sticky top-0 bg-slate-900 font-hanken text-white">
+                                        <tr>
+                                            <th class=" hidden md:table-cell">Transaction No.</th>
+                                            <th >Name</th>
+                                            <th class="hidden md:table-cell">ID Number</th>
+                                            <th >Benefit</th>
+                                            <th >Date of Claim</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Previous Benefit Status-->
+                    <div class="w-[85vw] mb-25 flex flex-col items-center">
+                        <div class=" gap-3 w-[85vw] relative  mb-15  flex col-span-3 items-center ">
+                            <h2 class=" relative font-poppins  text-2xl md:text-3xl  ">Previous</h2>
+                            <h2 class=" font-hanken text-2xl md:text-3xl  ">BENEFITS</h2>
+                            <div class=" md:w-20 bg-slate-900 w-12 lg:w-25 h-0.5 sm:w-13 "></div>
+                        </div>
+                        <div class="flex-col flex">
+                            <div class="flex xl:no-wrap justify-center  w-[85vw]  relative gap-2 mb-15 md:top-[0vh]  ">
+                                <p id="month" class="lg:text-3xl text-2xl font-semibold relative">Month</p>
+                                <p id="year" class="lg:text-3xl text-2xl font-semibold relative">Year</p>
+                            </div>
+                            <!--Table Manipulation Tools-->
+                            <div class="flex w-[85vw] gap-2 mb-2 items-center justify-around">
+                                    <div class="flex flex-col lg:flex-row  w-[85vw]  justify-end items-center">
+                                        <div class="mr-auto">
+                                            <input type="search" placeholder="Search Name" class=" pl-2 w-[70vw] lg:w-[30vw]  h-10 rounded-4xl bg-slate-50">
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <div class="flex ">
+                                                <p class="lg:text-[1em] ml-auto text-nowrap text-[0.9em] font-hanken my-auto mr-2 ">Month and Year: </p>
+                                                <form>
+                                                    <input type="month" id="dob" name="dob" class="mt-1 block w-[15vw] lg:w-[10vw] md:w-full  p-2 rounded-md" />
+                                                </form>
+                                                <script>
+                                                    const dobInput1 = document.getElementById('dob');
+                                                    const monthNames1 = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+                                                    dobInput.addEventListener('change', function() {
+                                                        const [year, month] = this.value.split('-');
+                                                        const monthIndex = parseInt(month, 10) - 1;
+                                                        document.getElementById('month').textContent = monthNames[monthIndex];
+                                                        document.getElementById('year').textContent = year;
+                                                    });
+                                                </script>
+                                            </div>
+                                            <div class="flex group  z-10 relative font-poppins ml-auto ">
+                                                <p id = "previousfilterBtn" class="flex  bg-slate-100  ">
+                                                    <img class="mask-[url('../resources/funnel.svg')] mask-no-repeat bg-slate-900 hover:bg-slate-950 mask-contain size-6">
+                                                    <p class="hover:text-slate-950">Filter</p>
+                                                </p>
+                                                <div class=" gap-2 hidden previousbnftfilterPanel flex-col absolute top-7 bg-slate-50 rounded-2xl overflow-hidden z-10">
+                                                    <div class = "w-screen h-screen filtermodalExit -z-10  fixed top-0 left-0"></div>
+                                                    <p class = "filtermodalExit "></p>
+                                                    <div class="group/bystatus  ">
+                                                        <div class="flex flex-row items-center border-b-[1px] delay-200 group-hover/bystatus:bg-slate-900 group-hover/bystatus:text-slate-100 border-slate-900 gap-2">
+                                                            <p class="text-nowrap py-2 pl-1.5   ">By Status</p>
+                                                            <img class="mask-[url('../resources/chevron-up.svg')] delay-200 group-hover/bystatus:bg-slate-100 transition-all pr-7 size-6 group-hover/bystatus:rotate-180 bg-slate-900 mask-contain mask-no-repeat ">
+                                                        </div>
+                                                        <div class = "invisible group-hover/bystatus:visible h-0 group-hover/bystatus:h-[30vh] overflow-y-scroll group-hover/bystatus:mb-5 group-hover/bystatus:flex delay-200 transition-all flex-col">
+                                                            <div data-filtervalue = "All" data-filter-type = "bybnftStatus" class = " border-b-[1px] filtervalueContainer py-2 pl-1.5 pr-3 hover:bg-slate-900 hover:text-slate-100  border-slate-900">
+                                                                <p>All</p>
+                                                            </div>
+                                                            <div data-filtervalue = "Claimed" data-filter-type = "bybnftStatus" class = " border-b-[1px] filtervalueContainer py-2 pl-1.5 pr-3 hover:bg-slate-900 hover:text-slate-100  border-slate-900">
+                                                                <p>Claimed</p>
+                                                            </div>
+                                                            <div data-filtervalue = "Unclaimed" data-filter-type = "bybnftStatus" class = " border-b-[1px] filtervalueContainer py-2 pl-1.5 pr-3 hover:bg-slate-900 hover:text-slate-100  border-slate-900">
+                                                                <p>Unclaimed</p>
+                                                            </div>
+                                                        
+                                                            
+                                                        </div>
+                                                    </div>
+                                                    <div class="group/bybenefit">
+                                                        <div class="flex gap-1 flex-row items-center delay-200 group-hover/bybenefit:bg-slate-900 group-hover/bybenefit:text-slate-100 border-b-[1px] border-slate-900">
+                                                            <p class="text-nowrap py-2 pl-1.5   ">By Benefit</p>
+                                                        <img class="mask-[url('../resources/chevron-up.svg')] delay-200 transition-all pr-7 group-hover/bybenefit:bg-slate-100 size-6 group-hover/bybenefit:rotate-180 bg-slate-900 mask-contain mask-no-repeat ">
+                                                        </div>
+                                                        <div class="overflow-y-auto previoustblbnftfilterContainer invisible group-hover/bybenefit:visible h-0 group-hover/bybenefit:h-[25vh] group-hover/bybenefit:flex delay-200 transition-all flex-col">
+                                    
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                               
+                                            </div>
+                                        </div>
+                                    </div>
+                            </div>
+                            
+                            <div class="flex flex-col gap-2 w-[85vw] items-center ">
+                            
+                                <!--Main Table for Previous Benefit Status-->
+                                <div class=" w-[85vw]  mb-15">
+                                    <div class="overflow-y-auto bg-slate-50  overflow-x-hidden h-[70vh] w-[85vw] relative mx-auto rounded-2xl">
+                                        <table id = "previoustbl" class="border-collapse shadow-2xs bg-slate-50 w-[87vw] text-wrap font-poppins text-center">
+                                            <thead class="sticky top-0 bg-slate-900 font-hanken text-white">
+                                                <tr>
+                                                    <th class=" hidden md:table-cell">Transaction No.</th>
+                                                    <th>Name</th>
+                                                    <th class=" hidden md:table-cell">ID Number</th>
+                                                    <th>Benefit</th>
+                                                    <th>Date of Claim</th>
+                                                    <th>Status</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                            
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Auxilliary-->
+                <div class=" hidden items-center z-50 bnftModal  justify-center">
+                    <div class="bg-stone-900/70 bnftModalexit backdrop-blur-xs z-0  h-screen w-screen fixed top-0"></div>
+                    <div class=" fixed  h-[80vh] rounded-2xl overflow-y-scroll md:overflow-y-hidden lg:flex-row overflow-x-hidden top-[15vh] lg:top-[30vh] xl:top-[20vh] gap-2  flex flex-col">
+                        <div class="lg:flex-row flex-col flex  z-40 gap-2">
+                            <div class = "flex gap-2  flex-col">
+                                <div class="flex items-center md:flex-row rounded-2xl p-2 bg-slate-100 justify-center flex-col-reverse">
+                                    <div class="md:mr-auto">
+                                        <p id="bnftmodalrecipient_name" class = "font-semibold">Last Name, First Name, Middle Name</p>
+                                    </div>
+                                    <div class="size-40 md:ml-auto overflow-hidden">
+                                        <img id = "bnftmodalrecipient_pic" class="size-40 rounded-2xl border-1">
+                                    </div>
+                                </div>
+                                <div class="flex flex-col items-start rounded-2xl p-2 bg-slate-100 justify-center">
+                                    <div class="mb-2">
+                                        <p class="font-semibold">Personal Informations</p>
+                                        <div class="h-[1px] w-[70vw] lg:w-[40vw] bg-slate-900"></div>
+                                    </div>
+                                    <div class="flex ">
+                                        <div class="w-[30vw]  lg:w-[20vw]">
+                                            <div>
+                                                <p class="font-semibold">ID</p>
+                                                <p id="bnftmodalrecipient_id">ID</p>
+                                            </div>
+                                            <div>
+                                                <p class="font-semibold">Disability Type</p>
+                                                <p id="bnftmodalrecipient_disabilitytype">ID</p>
+                                            </div>
+                                            
+                                            <div>
+                                                <p class="font-semibold">Address</p>
+                                                <p id="bnftmodalrecipient_address">Address</p>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div>
+                                                <p class="font-semibold">Contact No</p>
+                                                <p id="bnftmodalrecipient_contactno">Contact No</p>
+                                            </div> 
+                                         
+                                            <div>
+                                                <p class="font-semibold">Birthday</p>
+                                                <p id="bnftmodalrecipient_birthday">Birthday</p>
+                                            </div>
+                                            <div>
+                                                <p class="font-semibold">Member Since</p>
+                                                <p id="bnftmodalrecipient_membersince">Address</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                  
+                            <div class="rounded-2xl lg:h-[24.5vh] xl:h-[43vh] bg-slate-100/70 backdrop-blur-xs ">
+                                <div class="bg-slate-100 p-2 mb-5 rounded-2xl">
+                                    <div class="mb-2">
+                                        <p class="font-semibold">Transaction Details</p>
+                                        <div class="h-[1px] w-[70vw] lg:w-[30vw] bg-slate-900"></div>
+                                    </div>
+                                    <div class = "flex">
+                                        <div class="flex flex-col lg:mr-20 gap-2">
+                                            <div>
+                                                <p class="font-semibold leading-5">Transaction No.</p>
+                                                <p id="bnftmodalrecipient_benefittransactionno">Transaction No.</p>
+                                            </div>
+                                            <div>
+                                                <p class="font-semibold leading-5">Benefit Name</p>
+                                                <p id="bnftmodalrecipient_benefitname">Benefit Name</p>
+                                            </div>
+                                            <div>
+                                                <p class="font-semibold leading-5">Type</p>
+                                                <p id="bnftmodalrecipient_benefittransactiontype">Type</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex flex-col gap-2">
+                                            <div>
+                                                <p class="font-semibold leading-5">Date of Claim</p>
+                                                <p id="bnftmodalrecipient_benefitdateofclaim" >Date of Claim</p>
+                                            </div>
+                                            <div>
+                                                <p class="font-semibold leading-5">Amount</p>
+                                                <p id="bnftmodalrecipient_benefitamount">Amount</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="p-2 flex">
+                                    <button id ="bnftmodalrecipient_benefitclaimaction" class="ml-auto mr-2 bg-slate-900  hover:bg-slate-950 rounded-2xl px-4 py-1 text-slate-100">Claim</button>
+                                    <button class="bnftModalexit  bg-slate-200 hover:bg-slate-300 rounded-2xl px-4 py-1 ">Cancel</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                 
+
+                </div>
+            </section>
+            <!--Benefits Manager-->
+            <section id="benefitsManager" class=" sectionContainer">
+                <div class="flex flex-col items-center mb-10 justify-center">
+                    <h2 class=" relative font-poppins top-2 md:top-2 mb-1 text-2xl md:text-3xl lg:text-3xl ">Benefits</h2>
+                    <h2 class=" font-hanken text-3xl sm:text-2xl md:text-4xl lg:text-4xl  ">MANAGER</h2>
+                    <div class=" md:w-15 bg-slate-900 w-12 h-1 sm:w-13 top-2 lg:top-3 relative mb-15"></div>
+                </div>
+                <div class="flex items-center mb-25 flex-col">
+                    <div class=" gap-3 w-[85vw] relative  mb-12  flex  items-center ">
+                        <h2 class=" relative font-poppins  text-2xl md:text-3xl  ">Benefits</h2>
+                        <h2 class=" font-hanken text-2xl md:text-3xl  ">CENTER</h2>
+                        <div class=" md:w-20 bg-slate-900 w-12 lg:w-25 h-0.5 sm:w-13 "></div>
+                    </div>
+                    <div class="flex flex-col w-[85vw] relative items-center">
+                        <div class="self-start item-start sm:items-center flex  gap-1 sm:gap-2 relative -top-10 mb-10">
+                            <button class="text-sm text-nowrap md:text-lg schedulingModalbtn bg-slate-950 flex items-center justify-end hover:bg-slate-900/90 transition-all text-slate-100 rounded-4xl px-2 md:px-4 py-2">
+                                <img src="../resources/plus.svg" class="brightness-0 invert size-6  lg:size-7"> 
+                                Schedule Distribution 
+                            </button>
+                            <button class="text-sm text-nowrap  md:text-lg reschedulingModalbtn bg-slate-950 flex items-center gap-1 hover:bg-slate-900/90 justify-end transition-all text-slate-100 rounded-4xl md:px-5 px-3 lg:px-4  py-2">
+                                <img src="../resources/pencil.svg" class="brightness-0 invert size-6 lg:size-7">
+                                Edit Schedule 
+                            </button>
+                        </div>
+                        <div class="rounded-2xl  w-[85vw]  overflow-x-hidden mb-15 overflow-y-auto">
+                            <div class="w-[85vw] gap-3 flex flex-col-reverse lg:flex-row">
+                                <div class="bg-slate-200 benefitcenterContainer p-2 transition-all flex rounded-2xl flex-col items-center   w-[85vw] lg:w-[52vw]">
+                                    <div class="flex  bg-slate-100 px-10 gap-2 py-5 rounded-2xl items-center top-2 mb-5 relative w-[82vw] lg:w-[50vw]">
+                                        <p id = "bnftcenterPanelbenefit_name" class="text-xl md:text-2xl font-semibold">------</p>
+                                        <div class=" border-dashed border-1 ml-auto border-slate-900 size-30 lg:size-30 xl:size-60 md:size-50 rounded-2xl flex    cursor-pointer overflow-hidden ">
+                                            <img id = "bnftcenterPanelbenefit_pic"  class="object-cover   size-30 lg:size-30 xl:size-60 md:size-50  text-center rounded-2xl cursor-pointer">
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col items-start bg-slate-100 px-7 lg:px-5 py-2 gap-5 rounded-2xl w-[82vw]  lg:w-[50vw] ">
+                                        <div class="flex xl:ml-3  flex-col items-start gap-1 ">
+                                            <p class="text-xl font-semibold text-nowrap w-35">Benefit Details</p>
+                                            <div class="bg-slate-900 w-65 md:w-[73vw] lg:w-[37vw] lg:h-[2px] h-[1.5px]"></div>
+                                        </div>
+                                        <div class="flex flex-col xl:ml-3 gap-2 ">
+                                            <div class="flex pl-5 w-[70vw] md:w-[72vw] lg:w-[45vw] p-2 gap-3 bg-slate-200 rounded-2xl mr-2  overflow-hidden">
+                                                <div class="gap-2  leading-5">
+                                                    <p class="font-semibold">Type </p>
+                                                    <p id = "bnftcenterPanelbenefit_type">------</p>
+                                                </div>
+                                                <div class="gap-2  leading-5">
+                                                    <p class="font-semibold text-nowrap">Date Added </p>
+                                                    <p id = "bnftcenterPanelbenefit_dateadded">------</p>
+                                                </div>
+                                                <div class="gap-2  leading-5">
+                                                    <p class="font-semibold">Amount </p>
+                                                    <p id = "bnftcenterPanelbenefit_amount">------</p>
+                                                </div>
+                                            </div>
+                                            <div class="flex flex-col w-[70vw] lg:w-[45vw]  md:w-[72vw] pl-5  bg-slate-200 rounded-2xl  overflow-x-hidden">
+                                                <div class="leading-8  pb-2">
+                                                    <p class="font-semibold">Total Beneficiaries </p>
+                                                    <p  id = "bnftcenterPanelbenefit_totalbeneficiaries" class = "bg-slate-300  inline px-2 py-1 rounded-lg ">----</p>
+                                                </div>
+                                                <div class="flex flex-col overflow-hidden justify-center rounded-2xl py-1 ">
+                                                    <div class=" pb-3">
+                                                        <p class="font-semibold">Streets Beneficiaries</p>
+                                                    </div>
+                                                    <div class="flex flex-col gap-2 ">
+                                                        <div class="grid grid-cols-2 md:flex gap-2 ">
+                                                            <div class="leading-5 flex flex-col pl-2  justify-center bg-slate-300 rounded-xl py-1  w-31  shrink-0">
+                                                                <p class="font-semibold ">Zavalla </p>
+                                                                <p id = "bnftcenterPanelbenefit_zavallabeneficiaries" class="text-wrap">----</p>
+                                                            </div>
+                                                            <div class="leading-5 flex flex-col pl-2  justify-center bg-slate-300 rounded-xl py-1   w-31 shrink-0">
+                                                                <p class="font-semibold">Arambulo </p>
+                                                                <p id = "bnftcenterPanelbenefit_arambulobeneficiaries" class="text-wrap">----</p>
+                                                            </div>
+                                                            <div class="leading-5 flex flex-col pl-2  justify-center bg-slate-300 rounded-xl py-1  w-31 shrink-0">
+                                                                <p class="font-semibold">Anonuevo </p>
+                                                                <p id = "bnftcenterPanelbenefit_anonuevobeneficiaries" class=" text-wrap">----</p>
+                                                            </div>
+                                                            <div class="leading-5 flex flex-col pl-2  justify-center bg-slate-300 rounded-xl py-1   w-31 shrink-0">
+                                                                <p class="font-semibold">Rizal Blvd</p>
+                                                                <p id = "bnftcenterPanelbenefit_rizalbeneficiaries" class="text-wrap ">----</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class=" grid grid-cols-2 md:flex gap-2  ">
+                                                            <div class="leading-5 flex flex-col px-2 overflow-hidden justify-center bg-slate-300 rounded-xl py-1  w-31 shrink-0">
+                                                                <p class="font-semibold">F. Gomez </p>
+                                                                <p id = "bnftcenterPanelbenefit_fgomezbeneficiaries" class="text-wrap">----</p>
+                                                            </div>
+                                                            <div class="leading-5 flex flex-col px-2  justify-center bg-slate-300 rounded-xl py-1  w-31 shrink-0">
+                                                                <p class="font-semibold">Lucero </p>
+                                                                <p  id = "bnftcenterPanelbenefit_lucerobeneficiaries" class="text-wrap ">----</p>
+                                                            </div>
+                                                            <div class="leading-5 flex flex-col px-2  justify-center bg-slate-300 rounded-xl py-1  w-31 shrink-0">
+                                                                <p class="font-semibold flex-nowrap">Dr. Zavalla </p>
+                                                                <p id = "bnftcenterPanelbenefit_drzavallabeneficiaries" class="text-wrap">----</p>
+                                                            </div>
+                                                            <div class="leading-5 flex flex-col px-2  justify-center bg-slate-300 rounded-xl py-1 w-31 shrink-0">
+                                                                <p class="font-semibold flex-nowrap">P. Vallejo </p>
+                                                                <p id = "bnftcenterPanelbenefit_pvallejobeneficiaries" class="text-wrap ">----</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class=" flex gap-2 mt-10  justify-center md:justify-end w-[82vw]  lg:w-[50vw] ">
+                                        <button class="rounded-4xl bg-slate-900 hover:bg-slate-700 text-slate-100 px-4 py-1 editbenefitBtn">Edit Benefit</button>
+                                        <button class="rounded-4xl   px-3 py-1 text-slate-900 bg-slate-300 hover:bg-slate-700 hover:text-slate-100">Delete Benefit</button>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col md:flex-row lg:flex-col gap-2 rounded-2xl    overflow-hidden  lg:w-[33vw]">
+                                    <!--Add Benefit Card-->
+                                    <div class=" flex     rounded-2xl items-center mb-2 justify-center ">
+                                        <div class="  gap-2 flex flex-col  w-[85vw] md:w-[42.5vw] lg:w-[40vw] bg-slate-200 items-center justify-center rounded-2xl ">
+                                            <div class="self-end mr-5 lg:mr-5 mt-10">
+                                                <p class="font-semibold text-2xl ">Add Benefit</p>
+                                            </div>
+                                            <div class="flex   md:flex-col-reverse lg:flex-row py-1 w-[85vw] lg:w-[30vw] md:justify-center lg:items-start md:items-center xl:w-[30vw] mt-5 gap-2 mb-2">
+                                                <div class=" flex  md:w-[30vw]  md:ml-0 lg:w-[19vw] xl:w-[15vw]  ml-5 lg:ml-2 flex-col gap-2">
+                                                    <div class = "leading-7">
+                                                        <p class="font-semibold   ">Benefit Name</p>
+                                                        <input type="text" class = "w-[40vw] pl-2 rounded-lg  lg:w-[20vw] xl:w-[15vw]" placeholder="Enter Benefit Name">
+                                                    </div>
+                                                    <div class="leading-7">
+                                                        <p class=" font-semibold">Benefit Type</p>
+                                                        <select  class = "pl-2 rounded-lg">
+                                                            <option>Centralized</option>
+                                                            <option>Decentralized</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class = "leading-7">
+                                                        <p class="font-semibold   ">Amount</p>
+                                                        <input type="text" class = "w-[40vw] pl-2 rounded-lg  lg:w-[20vw] xl:w-[15vw]" placeholder="Enter Benefit Amount">
+                                                    </div>
+                                                </div>
+                                                <div class="flex flex-col md:items-center md:w-[50vw] md:mr-0 mr-5 lg:mr-10 xl:mr-0">
+                                                    <input id="fileUpload" type="file" class="hidden">
+                                                    <label for="fileUpload">
+                                                        <div class="border-dashed border-1 border-slate-900 size-30 lg:size-30 xl:size-40 md:size-50  text-center rounded-2xl flex items-center justify-center cursor-pointer"> Click to upload <img id="previewImage">
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="self-end mr-4 mb-2  md:mr-2 ">
+                                                <button class="bg-slate-900 text-slate-100 rounded-full px-3 py-1">Add Benefit</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--Benefits List Card-->
+                                    <div class=" bg-slate-200 md:w-[42.5vw] lg:w-[32vw] xl:w-[32.5vw] rounded-2xl  flex flex-col">
+                                        <div class="text-end mt-10 mr-10 md:mr-5">
+                                            <div class=" ml-auto w-[25vw]">
+                                                <p class="font-semibold text-2xl">Benefits</p>
+                                            </div>
+                                            <div class=" mt-5 mb-5  flex flex-col items-end gap-2">
+                                                <input type="search" class="bg-slate-100 w-[60vw] md:w-[32vw] lg:w-[25vw]  rounded-4xl shadow-xs">
+                                                <div class="flex">
+                                                    <select>
+                                                        <option>Personalized</option>
+                                                        <option>Centralized</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--Benefit List-->
+                                        <div id = "benefitlistContainer" class=" ml-auto mb-5  mr-7 lg:h-[19vh] xl:h-[35vh] overflow-y-auto    text-nowrap overflow-x-hidden text-xl h-[30vh] w-[65vw] md:w-[30vw] lg:w-[20vw] xl:w-[25vw] flex flex-col">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Auxilliary-->
+                <div>
+                    <!--Add Benefit Schedule Pop-up-->
+                    <div class="fixed schedulingModal top-0 z-40 hidden items-center justify-center h-screen w-screen ">
+                        <div class="bg-stone-950/70 h-screen w-screen schedulingModalexit backdrop-blur-xs"></div>
+                        <div class=" w-[85vw] absolute  flex flex-col items-center mt-15 justify-around rounded-2xl ">
+                            <div class=" gap-5 lg:gap-2 rounded-2xl  backdrop-blur-xs  w-[85vw] justify-center items-center lg:items-start flex-col lg:flex-row items-top p-2 flex ">
+                                <div class="w-[80vw] lg:lg:w-[55vw] flex rounded-2xl gap-2 items-center flex-col  shadow-lg">
+                                    <div class=" w-[80vw] bg-slate-100 lg:w-[54vw] flex gap-2  rounded-lg ">
+                                        <p class=" rounded-lg justify-self-start font-semibold bg-slate-900 text-slate-100 px-5">Eligible Beneficiaries</p>
+                                        <div class="ml-auto rounded-lg justify-self-end">
+                                            <select class = "w-[38vw] lg:w-[15vw] mr-2">
+                                                <option>All</option>
+                                                <option>Birthday Benefit</option>
+                                                <option>Christmas Benefit</option>
+                                                <option>Allowance Benefit</option>
+                                                <option>Others</option>
+                                            </select>
+                                            
+                                            
+                                            <select class="bg-slate-100  rounded-lg">
+                                                <option>All</option>
+                                                <option>F. Gomez</option>
+                                                <option>Lucero</option>
+                                                <option>Dr. Zavalla</option>
+                                                <option>Zavalla</option>
+                                                <option>Arambulo</option>
+                                                <option>Anonuevo</option>
+                                                <option>P. Vallejo</option>
+                                                <option>Rizal Blvd</option>
+                                            </select>
+                                    
+                                            <input class = "w-[38vw] lg:w-[10vw] mr-2" type="month">
+                                        </div>
+                                    </div>
+
+                                    <div class = "bg-slate-100 w-[80vw] lg:ml-1 lg:w-[54vw] rounded-4xl self-start">
+                                        <input class = "pl-2 w-[80vw] lg:w-[54vw] bg-slate-50 rounded-2xl " type = "search" placeholder="Search Name">
+                                    </div>
+                                    <div class=" h-[60vw] lg:h-[40vh]  z-50 bg-slate-50 rounded-2xl overflow-x-hidden overflow-y-auto">
+                                        <table class="w-[80vw] lg:w-[53vw]  ">
+                                            <thead class="bg-slate-900 text-slate-100 sticky top-0 ">
+                                                <th>Name</th>
+                                                <th>ID</th>
+                                                <th>Street</th>
+                                                <th>Benefit</th>
+                                            </thead>
+                                            <tbody class="text-center">
+                                                <tr class="h-10 border-b-1 border-slate-900">
+                                                    <td>Juan Dela Cruz</td>
+                                                    <td>202-KL-12</td>
+                                                    <td>Anonuevo</td>
+                                                    <td>Birthday</td>
+                                                </tr>
+                                                <tr class="h-10 border-b-1 border-slate-900">
+                                                    <td>Juan Perez</td>
+                                                    <td>202-KL-11</td>
+                                                    <td>Arambulo</td>
+                                                    <td>Allowance</td>
+                                                </tr>
+                                                <tr class="h-10 border-b-1 border-slate-900">
+                                                    <td>Kenneth Cruz</td>
+                                                    <td>202-KL-15</td>
+                                                    <td>Anonuevo</td>
+                                                    <td>Birthday</td>
+                                                </tr>
+                                                <tr class="h-10 border-b-1 border-slate-900">
+                                                    <td>Josiah Libna</td>
+                                                    <td>202-KL-19</td>
+                                                    <td>Arambulo</td>
+                                                    <td>Allowance</td>
+                                                </tr>
+                                                <tr class="h-10 border-b-1 border-slate-900">
+                                                    <td>Juan Dela Cruz</td>
+                                                    <td>202-KL-12</td>
+                                                    <td>Anonuevo</td>
+                                                    <td>Birthday</td>
+                                                </tr>
+                                                <tr class="h-10 border-b-1 border-slate-900">
+                                                    <td>Juan Perez</td>
+                                                    <td>202-KL-11</td>
+                                                    <td>Arambulo</td>
+                                                    <td>Allowance</td>
+                                                </tr>
+                                                <tr class="h-10 border-b-1 border-slate-900">
+                                                    <td>Kenneth Cruz</td>
+                                                    <td>202-KL-15</td>
+                                                    <td>Anonuevo</td>
+                                                    <td>Birthday</td>
+                                                </tr>
+                                                <tr class="h-10 border-b-1 border-slate-900">
+                                                    <td>Josiah Libna</td>
+                                                    <td>202-KL-19</td>
+                                                    <td>Arambulo</td>
+                                                    <td>Allowance</td>
+                                                </tr>
+                                                <tr class="h-10 border-b-1 border-slate-900">
+                                                    <td>Juan Dela Cruz</td>
+                                                    <td>202-KL-12</td>
+                                                    <td>Anonuevo</td>
+                                                    <td>Birthday</td>
+                                                </tr>
+                                                <tr class="h-10 border-b-1 border-slate-900">
+                                                    <td>Juan Perez</td>
+                                                    <td>202-KL-11</td>
+                                                    <td>Arambulo</td>
+                                                    <td>Allowance</td>
+                                                </tr>
+                                                <tr class="h-10 border-b-1 border-slate-900">
+                                                    <td>Kenneth Cruz</td>
+                                                    <td>202-KL-15</td>
+                                                    <td>Anonuevo</td>
+                                                    <td>Birthday</td>
+                                                </tr>
+                                                <tr class="h-10 border-b-1 border-slate-900">
+                                                    <td>Josiah Libna</td>
+                                                    <td>202-KL-19</td>
+                                                    <td>Arambulo</td>
+                                                    <td>Allowance</td>
+                                                </tr>
+                                                <tr class="h-10 border-b-1 border-slate-900">
+                                                    <td>Juan Dela Cruz</td>
+                                                    <td>202-KL-12</td>
+                                                    <td>Anonuevo</td>
+                                                    <td>Birthday</td>
+                                                </tr>
+                                                <tr class="h-10 border-b-1 border-slate-900">
+                                                    <td>Juan Perez</td>
+                                                    <td>202-KL-11</td>
+                                                    <td>Arambulo</td>
+                                                    <td>Allowance</td>
+                                                </tr>
+                                                <tr class="h-10 border-b-1 border-slate-900">
+                                                    <td>Kenneth Cruz</td>
+                                                    <td>202-KL-15</td>
+                                                    <td>Anonuevo</td>
+                                                    <td>Birthday</td>
+                                                </tr>
+                                                <tr class="h-10 border-b-1 border-slate-900">
+                                                    <td>Juan Dela Cruz</td>
+                                                    <td>202-KL-12</td>
+                                                    <td>Anonuevo</td>
+                                                    <td>Birthday</td>
+                                                </tr>
+                                                <tr class="h-10 border-b-1 border-slate-900">
+                                                    <td>Juan Perez</td>
+                                                    <td>202-KL-11</td>
+                                                    <td>Arambulo</td>
+                                                    <td>Allowance</td>
+                                                </tr>
+                                                <tr class="h-10 border-b-1 border-slate-900">
+                                                    <td>Kenneth Cruz</td>
+                                                    <td>202-KL-15</td>
+                                                    <td>Anonuevo</td>
+                                                    <td>Birthday</td>
+                                                </tr>
+                                                <tr class="h-10 border-b-1 border-slate-900">
+                                                    <td>Josiah Libna</td>
+                                                    <td>202-KL-19</td>
+                                                    <td>Arambulo</td>
+                                                    <td>Allowance</td>
+                                                </tr>
+                                                <tr class="h-10 border-b-1 border-slate-900">
+                                                    <td>Juan Dela Cruz</td>
+                                                    <td>202-KL-12</td>
+                                                    <td>Anonuevo</td>
+                                                    <td>Birthday</td>
+                                                </tr>
+                                                <tr class="h-10 border-b-1 border-slate-900">
+                                                    <td>Juan Perez</td>
+                                                    <td>202-KL-11</td>
+                                                    <td>Arambulo</td>
+                                                    <td>Allowance</td>
+                                                </tr>
+                                                <tr class="h-10 border-b-1 border-slate-900">
+                                                    <td>Kenneth Cruz</td>
+                                                    <td>202-KL-15</td>
+                                                    <td>Anonuevo</td>
+                                                    <td>Birthday</td>
+                                                </tr>
+                                                <tr class="h-10 border-b-1 border-slate-900">
+                                                    <td>Josiah Libna</td>
+                                                    <td>202-KL-19</td>
+                                                    <td>Arambulo</td>
+                                                    <td>Allowance</td>
+                                                </tr>
+                                                <tr class="h-10 border-b-1 border-slate-900">
+                                                    <td>Juan Dela Cruz</td>
+                                                    <td>202-KL-12</td>
+                                                    <td>Anonuevo</td>
+                                                    <td>Birthday</td>
+                                                </tr>
+                                                <tr class="h-10 border-b-1 border-slate-900">
+                                                    <td>Juan Perez</td>
+                                                    <td>202-KL-11</td>
+                                                    <td>Arambulo</td>
+                                                    <td>Allowance</td>
+                                                </tr>
+                                                <tr class="h-10 border-b-1 border-slate-900">
+                                                    <td>Kenneth Cruz</td>
+                                                    <td>202-KL-15</td>
+                                                    <td>Anonuevo</td>
+                                                    <td>Birthday</td>
+                                                </tr>
+                                                <tr class="h-10 border-b-1 border-slate-900">
+                                                    <td>Josiah Libna</td>
+                                                    <td>202-KL-19</td>
+                                                    <td>Arambulo</td>
+                                                    <td>Allowance</td>
+                                                </tr>
+                                                <tr class="h-10 border-b-1 border-slate-900">
+                                                    <td>Juan Dela Cruz</td>
+                                                    <td>202-KL-12</td>
+                                                    <td>Anonuevo</td>
+                                                    <td>Birthday</td>
+                                                </tr>
+                                                <tr class="h-10 border-b-1 border-slate-900">
+                                                    <td>Juan Perez</td>
+                                                    <td>202-KL-11</td>
+                                                    <td>Arambulo</td>
+                                                    <td>Allowance</td>
+                                                </tr>
+                                                <tr class="h-10 border-b-1 border-slate-900">
+                                                    <td>Kenneth Cruz</td>
+                                                    <td>202-KL-15</td>
+                                                    <td>Anonuevo</td>
+                                                    <td>Birthday</td>
+                                                </tr>
+                                                <tr class="h-10 border-b-1 border-slate-900">
+                                                    <td>Josiah Libna</td>
+                                                    <td>202-KL-19</td>
+                                                    <td>Arambulo</td>
+                                                    <td>Allowance</td>
+                                                </tr>
+                                                <tr class="h-10 border-b-1 border-slate-900">
+                                                    <td>Juan Dela Cruz</td>
+                                                    <td>202-KL-12</td>
+                                                    <td>Anonuevo</td>
+                                                    <td>Birthday</td>
+                                                </tr>
+                                                <tr class="h-10 border-b-1 border-slate-900">
+                                                    <td>Juan Perez</td>
+                                                    <td>202-KL-11</td>
+                                                    <td>Arambulo</td>
+                                                    <td>Allowance</td>
+                                                </tr>
+                                                <tr class="h-10 border-b-1 border-slate-900">
+                                                    <td>Kenneth Cruz</td>
+                                                    <td>202-KL-15</td>
+                                                    <td>Anonuevo</td>
+                                                    <td>Birthday</td>
+                                                </tr>
+                                                <tr class="h-10 border-b-1 border-slate-900">
+                                                    <td>Josiah Libna</td>
+                                                    <td>202-KL-19</td>
+                                                    <td>Arambulo</td>
+                                                    <td>Allowance</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col lg:pr-2 relative lg:-top-0.5 gap-2">
+                                    <div class="  w-[80vw] lg:w-[22.5vw] flex gap-2 bg-slate-100/70 backdrop-blur-xs  rounded-4xl ">
+                                        <p class="centralizedSchedulingbtn bg-slate-900 cursor-pointer text-slate-100 px-5 py-1 rounded-full ">Centralized</p>
+                                        <p class="personalizedSchedulingbtn  text-slate-900 px-5 rounded-full py-1">Decentralized</p>
+                                    </div>
+                                    <div class="w-[80vw]  bg-slate-50/50 backdrop-blur-xs lg:w-[29vw] personalizedScheduling hidden flex-col gap-3 rounded-2xl ">
+                                        <div class="flex gap-2 bg-slate-50 flex-col p-2 rounded-2xl ">
+                                            <p class="font-semibold mb-1">Schedule Details</p>
+                                            <div>
+                                                <p class="text-sm text-slate-400">Beneficiary</p>
+                                                <input type="text" placeholder="Beneficiary Name">
+                                            </div>
+                                            <div>
+                                                <p class="text-sm text-slate-400">Quantity</p>
+                                                <input  disabled class="bg-slate-100 w-[15vw] pl-2 rounded-lg" type="text" placeholder="Total Receiver">
+                                            </div>
+                                            <div class="mb-5">
+                                                <p class="text-sm text-slate-400">Date and Time</p>
+                                                <input class="bg-slate-100   pl-2 rounded-lg" type="datetime-local">
+                                            </div>
+                                            
+                                        </div>
+                                        <div class=" flex justify-end gap-2 mb-2">
+                                            <button class="bg-slate-900 gap-2 rounded-4xl hover:bg-slate-950 text-slate-100 px-3 py-1">Schedule Now</button>
+                                            <button class = "schedulingModalexit hover:bg-slate-300 bg-slate-200 rounded-2xl px-5 py-1 mr-2">Cancel</button>
+                                        </div>
+                                    </div>
+                                    <div class="w-[80vw] lg:w-[29vw] bg-slate-50/50 centralizedScheduling flex flex-col gap-3 rounded-2xl ">
+                                        <div class=" bg-slate-50 flex gap-2 flex-col p-2 rounded-2xl ">
+                                            <p class="font-semibold mb-1">Schedule Details</p>
+                                           
+                                            <div>
+                                                <p class="text-sm text-slate-400">Quantity</p>
+                                                <input class="bg-slate-100  pl-2 rounded-lg" type="text" placeholder="Total Receiver">
+                                                <select class="bg-slate-100  rounded-lg">
+                                                    <option>All</option>
+                                                    <option>10</option>
+                                                    <option>20</option>
+                                                    <option>30</option>
+                                                    <option>40</option>
+                                                    <option>50</option>
+                                                    <option>60</option>
+                                                    <option>70</option>
+                                                    <option>80</option>
+                                                    <option>90</option>
+                                                    <option>100</option>
+                                                </select>
+                                            </div>
+                                            <div class="mb-5">
+                                                <p class="text-sm text-slate-400">Date and Time</p>
+                                                <input class="bg-slate-100  pl-2 rounded-lg" type="datetime-local">
+                                            </div>
+                                            
+                                        </div>
+                                        <div class=" flex gap-2 justify-end mb-2">
+                                                <button class="bg-slate-900 hover:bg-slate-950 rounded-4xl text-slate-100 px-3 py-1">Schedule Now</button>
+                                                <button class = "schedulingModalexit hover:bg-slate-300 bg-slate-200 rounded-2xl px-5 py-1 mr-2">Cancel</button>
+                                            </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Add Benefit ReSchedule Pop-up-->
+                    <div class="fixed reschedulingModal top-0 z-40 hidden items-center justify-center h-screen w-screen ">
+                        <div class="bg-stone-950/70 h-screen w-screen reschedulingModalexit backdrop-blur-xs"></div>
+                        <div class=" w-[85vw] absolute  flex flex-col items-center mt-15 justify-around rounded-2xl ">
+                            <div class=" gap-5 lg:gap-2 rounded-2xl   w-[85vw] justify-center items-center lg:items-start flex-col lg:flex-row items-top p-2 flex ">
+                                <div class="w-[80vw] lg:pl-2 lg:w-[55vw] flex rounded-2xl gap-2 items-center flex-col  shadow-lg">
+                                    <div class=" w-[80vw] bg-slate-100 lg:w-[54vw] flex gap-2  rounded-lg ">
+                                        <p class=" rounded-lg items-center flex  font-semibold bg-slate-900 text-slate-100 px-5">Schedule List</p>
+                                        <div class="ml-auto   rounded-lg justify-self-end">
+                                            <select>
+                                                <option>All</option>
+                                                <option>Centralized</option>
+                                                <option>Decentralized</option>
+                                            </select>
+                                            <select >
+                                                <option>All</option>
+                                                <option>Birthday Benefit</option>
+                                                <option>Christmas Benefit</option>
+                                                <option>Allowance Benefit</option>
+                                                <option>Others</option>
+                                            </select>
+                                            <input  type="month">
+                                        </div>
+                                    </div>
+                                    <div class=" h-[60vw] lg:h-[40vh]  z-50 bg-slate-50 rounded-2xl overflow-x-hidden overflow-y-auto">
+                                        <table class="w-[80vw]  lg:w-[53vw]  ">
+                                            <thead class="bg-slate-900 text-slate-100 sticky top-0 ">
+                                                <th>Receiver</th>
+                                                <th>Benefit</th>
+                                                <th>Type</th>
+                                                <th>Date of Schedule</th>
+                                            </thead>
+                                            <tbody class="text-center">
+                                                <tr class="h-10 border-b-1 border-slate-900">
+                                                    <td>All</td>
+                                                    <td>Birthday Benefit</td>
+                                                    <td>Centralized</td>
+                                                    <td>09/29/25</td>
+                                                </tr>
+                                                <tr class="h-10 border-b-1 border-slate-900">
+                                                    <td>All</td>
+                                                    <td>Birthday Benefit</td>
+                                                    <td>Centralized</td>
+                                                    <td>09/29/25</td>
+                                                </tr>
+                                                <tr class="h-10 border-b-1 border-slate-900">
+                                                    <td>All</td>
+                                                    <td>Birthday Benefit</td>
+                                                    <td>Centralized</td>
+                                                    <td>09/29/25</td>
+                                                </tr>
+                                                <tr class="h-10 border-b-1 border-slate-900">
+                                                    <td>All</td>
+                                                    <td>Birthday Benefit</td>
+                                                    <td>Centralized</td>
+                                                    <td>09/29/25</td>
+                                                </tr>
+                                                <tr class="h-10 border-b-1 border-slate-900">
+                                                    <td>All</td>
+                                                    <td>Birthday Benefit</td>
+                                                    <td>Centralized</td>
+                                                    <td>09/29/25</td>
+                                                </tr>
+                                                <tr class="h-10 border-b-1 border-slate-900">
+                                                    <td>All</td>
+                                                    <td>Birthday Benefit</td>
+                                                    <td>Centralized</td>
+                                                    <td>09/29/25</td>
+                                                </tr>
+                                                <tr class="h-10 border-b-1 border-slate-900">
+                                                    <td>All</td>
+                                                    <td>Birthday Benefit</td>
+                                                    <td>Centralized</td>
+                                                    <td>09/29/25</td>
+                                                </tr>
+                                                <tr class="h-10 border-b-1 border-slate-900">
+                                                    <td>All</td>
+                                                    <td>Birthday Benefit</td>
+                                                    <td>Centralized</td>
+                                                    <td>09/29/25</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col lg:pr-2 gap-2">
+                                    <div class="w-[80vw] bg-slate-100/50 backdrop-blur-xs xl:w-[29vw] personalizedScheduling hidden flex-col gap-3 rounded-2xl ">
+                                        <div class=" bg-slate-50 flex gap-2 flex-col p-2 rounded-2xl ">
+                                            <p class="font-semibold mb-1">Schedule Details</p>
+                                            <div>
+                                                <p class="text-sm text-slate-400">Beneficiary</p>
+                                                <input type="text" placeholder="Beneficiary Name">
+                                            </div>
+                                            <div>
+                                                <p class="text-sm text-slate-400">Quantity</p>
+                                                <input class="bg-slate-100  pl-2 rounded-lg" type="text" placeholder="Total Receiver">
+                                            </div>
+                                            <div class="mb-10">
+                                                <p class="text-sm text-slate-400">Date and Time</p>
+                                                <input class="bg-slate-100  pl-2 rounded-lg" type="datetime-local">
+                                            </div>
+                                            <div class=" flex justify-end">
+                                                <button class="bg-slate-900 rounded-4xl text-slate-100 px-3 py-1">Schedule Now</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="w-[80vw] bg-slate-50/50 backdrop-blur-xs  lg:w-[29vw] centralizedScheduling flex flex-col gap-3 rounded-2xl ">
+                                        <div class=" bg-slate-50 flex gap-2 flex-col p-2 rounded-2xl ">
+                                            <p class="font-semibold mb-1">Reschedule Details</p>
+                                            <div>
+                                                <p class="text-sm text-slate-400">Street</p>
+                                                <select class="bg-slate-100  rounded-lg">
+                                                    <option>All</option>
+                                                    <option>F. Gomez</option>
+                                                    <option>Lucero</option>
+                                                    <option>Dr. Zavalla</option>
+                                                    <option>Zavalla</option>
+                                                    <option>Arambulo</option>
+                                                    <option>Anonuevo</option>
+                                                    <option>P. Vallejo</option>
+                                                    <option>Rizal Blvd</option>
+                                                </select>
+                                            </div>
+                                            <div>
+                                                <p class="text-sm text-slate-400">Quantity</p>
+                                                <input class="bg-slate-100  pl-2 rounded-lg" type="text" placeholder="Total Receiver">
+                                                <select class="bg-slate-100  rounded-lg">
+                                                    <option>10</option>
+                                                    <option>20</option>
+                                                    <option>30</option>
+                                                    <option>40</option>
+                                                    <option>50</option>
+                                                    <option>60</option>
+                                                    <option>70</option>
+                                                    <option>80</option>
+                                                    <option>90</option>
+                                                    <option>100</option>
+                                                </select>
+                                            </div>
+                                            <div class="mb-5">
+                                                <p class="text-sm text-slate-400">Date and Time</p>
+                                                <input class="bg-slate-100  pl-2 rounded-lg" type="datetime-local">
+                                            </div>
+                                           
+                                        </div>
+                                         <div class=" flex justify-end gap-2 mb-2">
+                                                <button class="bg-slate-900 hover:bg-slate-950 rounded-4xl text-slate-100 px-3 py-1">Reschedule Now</button>
+                                                <button class = "reschedulingModalexit hover:bg-slate-300 bg-slate-200 rounded-2xl px-5 py-1 mr-2">Cancel</button>
+                                            </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Edit Benefit Pop-up-->
+                    <div class="fixed  editbenefitModal hidden top-0 z-40 items-center justify-center h-screen w-screen ">
+                        <div class="bg-stone-950/70 absolute  h-screen w-screen editbenefitModalexit backdrop-blur-xs"></div>
+                        <div class="inline-flex  items-center justify-center ">
+                            <div id="accountinfoContainer" class=" backdrop-blur-xs items-top gap-2 mt-10 transition-all flex  rounded-2xl  justify-center   p-2">
+                                <div class="flex flex-col-reverse  bg-slate-100  gap-2 py-2 rounded-2xl items-center  justify-center mb-2 relative w-[80vw] lg:w-[25vw]">
+                                    <input id = "bnftcenterPanelbenefit_name" type = "text" placeholder = "Christmas Gift" class = "w-[20vw] text-xl font-semibold">
+                                
+                                    <div class="  size-55 md:size-70 overflow-hidden    border-dashed rounded-3xl border-2 border-slate-900 ">
+                                        <img id="benefitinfoPicture" src="../resources/Christmas_card_pic.png" class="object-cover size-55 md:size-70">
+                                    </div>
+                                </div>
+                                <div class = "flex flex-col bg-slate-100/70 lg:h-[32vh] rounded-2xl">
+                                    <div class="flex flex-col   bg-slate-100 pl-5 lg:pl-10 mb-4 py-3 justify-start  gap-5 rounded-2xl w-[80vw] lg:w-[30vw]">
+                                        <div class="flex   flex-col items-start gap-1 md:gap-3 lg:gap-1">
+                                            <p class="text-lg md:text-xl font-semibold text-nowrap w-35">Benefit Details</p>
+                                            <div class="bg-slate-900 w-65 md:w-[75vw] lg:w-[25vw] lg:h-[2px] h-[1.5px]"></div>
+                                        </div>
+                                        <div class="flex  w-[68vw] md:w-[75vw] lg:w-[25vw]  items-center py-3   lg:px-2 px-2 bg-slate-200 rounded-2xl mr-2  overflow-hidden">
+                                            <div class="ml-2 leading-5">
+                                                <p class = "font-semibold">Type</p>
+                                                <select>
+                                                    <option>Centralized</option>
+                                                    <option>Personalized</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class=" flex gap-2  justify-center md:justify-end w-[80vw]  lg:w-[30vw] ">
+                                        <button class="rounded-4xl bg-slate-900 hover:bg-slate-950 text-slate-100 px-6 py-1 ">Save</button>
+                                        <button class="rounded-4xl bg-slate-200 mr-2 px-3 py-1 text-slate-900 hover:bg-slate-300 editbenefitModalexit">Cancel</button>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </section>
+            <!--Accounts Manager-->
+            <section id="accountsManager" class="sectionContainer">
+                <!--Accounts Manager Text-->
+                <div class="flex flex-col items-center mb-10 justify-center">
+                    <h2 class=" relative font-poppins top-2 md:top-2 mb-1 text-2xl md:text-3xl lg:text-3xl ">Accounts</h2>
+                    <h2 class=" font-hanken text-3xl sm:text-2xl md:text-4xl lg:text-4xl  ">MANAGER</h2>
+                    <div class=" md:w-15 bg-slate-900 w-12 h-1 sm:w-13 top-2 lg:top-3 relative mb-15"></div>
+                </div>
+                <!--Accounts Manager Contents-->
+                <div class="flex flex-col items-center justify-center mb-20">
+                    <!--Signup Request-->
+                    <div>
+                        <div class=" gap-3  w-[85vw] relative  mb-15  flex col-span-3 items-center ">
+                            <h2 class=" relative font-poppins  text-2xl md:text-3xl  ">Signup</h2>
+                            <h2 class=" font-hanken text-2xl md:text-3xl  ">REQUESTS</h2>
+                            <div class=" md:w-20 bg-slate-900 w-12 lg:w-25 h-0.5 sm:w-13 "></div>
+                        </div>
+                        <div class="flex gap-2 mb-2  w-[85vw] items-center ">
+                            <!--Table Manipulation Tools-->
+                            <div class="flex  w-[85vw] overflow-hidden lg:flex-row items-center justify-center lg:flex-nowrap  relative ">
+                                <div class="mr-auto">
+                                    <form>
+                                        <fieldset>
+                                            <input type="text" placeholder="Search Name" class="pl-2 rounded-4xl lg:w-[40vw] md:w-[50vw] w-[65vw] h-10 focus:outline-slate-900 bg-white inset-ring-1 inset-ring-slate-200">
+                                        </fieldset>
+                                    </form>
+                                </div>
+                                <div class="flex ml-auto md:w-[20vw] w-[85vw] lg:w-[60vw]  lg:justify-end justify-around   items-center ">
+                                    <div class="flex  md:w-90 lg:w-20  justify-end">
+                                        <button onclick="openFilterPrev(this)" class="flex font-semibold my-auto">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+                                                <path fill-rule="evenodd" d="M3.792 2.938A49.069 49.069 0 0 1 12 2.25c2.797 0 5.54.236 8.209.688a1.857 1.857 0 0 1 1.541 1.836v1.044a3 3 0 0 1-.879 2.121l-6.182 6.182a1.5 1.5 0 0 0-.439 1.061v2.927a3 3 0 0 1-1.658 2.684l-1.757.878A.75.75 0 0 1 9.75 21v-5.818a1.5 1.5 0 0 0-.44-1.06L3.13 7.938a3 3 0 0 1-.879-2.121V4.774c0-.897.64-1.683 1.542-1.836Z" clip-rule="evenodd" />
+                                            </svg> Filter
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--Filter Modal-->
+                            <div id="filterPrevModal" class="invisible  absolute  w-[20vw] xl:w-[6vw] lg:w-[7vw] h-[10vh] opacity-80 flex flex-col justify-center">
+                                <button onclick="closeFilterPrev()" class="text-gray-500 hover:text-black text-xl md:pr-[0.5vw] relative h-[2vh] -top-[1vh] xl:-right-[2vw] lg:-right-[3vw] -right-[6vw]">&times;</button>
+                                <div class="flex-1/4 hover:bg-slate-400">
+                                    <button>Claimed</button>
+                                </div>
+                                <div class="flex-1/4 hover:bg-slate-400">
+                                    <button>Unclaimed</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="overflow-y-auto overflow-x-hidden bg-slate-50 h-[70vh] w-[85vw] mb-15 rounded-2xl ">
+                            <table id = "signuptbl" class="w-[85vw]  bg-slate-50 ">
+                                <thead class="bg-slate-900  text-slate-100  sticky top-0">
+                                    <tr>
+                                        <th>Name</th>
+                                        <th class="hidden md:table-cell">ID</th>
+                                        <th class="hidden md:table-cell">Disability</th>
+                                        <th>Account Type</th>
+                                        <th>Signup Date</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-center ">
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!--Accounts Center-->
+                    <div>
+                        <div class=" gap-3 w-[85vw]  relative  mb-15  flex col-span-3 items-center ">
+                            <h2 class=" relative font-poppins  text-2xl md:text-3xl  ">Accounts</h2>
+                            <h2 class=" font-hanken text-2xl md:text-3xl  ">CENTER</h2>
+                            <div class=" md:w-20 bg-slate-900 w-12 lg:w-25 h-0.5 sm:w-13 "></div>
+                        </div>
+
+                        <div class="w-[85vw] mb-15 gap-3 flex flex-col-reverse lg:flex-row">
+                            <div  class="bg-slate-200 transition-all accountcenterContainer flex rounded-2xl flex-col items-center   w-[85vw] lg:w-[52vw]">
+                                <div class="flex  bg-slate-100 px-10 gap-2 py-5 rounded-2xl items-center  top-2 mb-5 relative w-[78vw] lg:w-[50vw]">
+                                    <p id = "accountcenterPanelaccount_name" class = "font-semibold text-2xl">-----</p>
+                                    <div class=" border-dashed border-1 lg:ml-auto border-slate-900 size-30 lg:size-30 xl:size-60 md:size-50  text-center rounded-2xl flex items-center justify-center cursor-pointer">
+                                        <img id = "accountcenterPanelaccount_pic"  class="object-cover border-dashed border-1 border-slate-900 size-30 lg:size-30 xl:size-60 md:size-50  text-center rounded-2xl flex items-center justify-center cursor-pointer">
+                                    </div>
+                                </div>
+                                <div class="flex flex-col items-start bg-slate-100 px-7 pt-10 pb-10 gap-5 rounded-2xl w-[78vw] lg:w-[50vw]">
+                                    <div class="flex   flex-col items-start gap-1 md:gap-3 lg:gap-1">
+                                        <p class="text-xl font-semibold text-nowrap w-35">Personal Informations</p>
+                                        <div class="bg-slate-900 w-65 md:w-130 lg:w-[37vw] xl:w-[45vw] lg:h-[2px] h-[1.5px]"></div>
+                                    </div>
+                                    <div class="flex flex-col xl:flex-row bg-slate-200 w-[65vw] lg:w-[45vw] p-2 rounded-2xl">
+                                        <div class="flex flex-col ml-2 overflow-hidden mr-5 gap-2 overflow-x-hidden">
+                                            <div class="leading-5 ">
+                                                <p class="font-semibold">ID Number </p>
+                                                <p id = "accountcenterPanelaccount_id">-----</p>
+                                            </div>
+                                            <div class="leading-5 ">
+                                                <p class="font-semibold">Disability </p>
+                                                <p id = "accountcenterPanelaccount_disabilitytype">-----</p>
+                                            </div>
+                                            <div class="leading-5 ">
+                                                <p class="font-semibold">Position </p>
+                                                <p id = "accountcenterPanelaccount_position" class = "text-wrap" >------</p>
+                                            </div>
+                                            <div class="leading-5 ">
+                                                <p class="font-semibold">Member Since </p>
+                                                <p id = "accountcenterPanelaccount_membersince" class = "text-wrap">-----</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex flex-col ml-2 gap-2 overflow-hidden">
+                                            <div class="leading-5 ">
+                                                <p class="font-semibold">Gender: </p>
+                                                <p id = "accountcenterPanelaccount_gender" class = "text-wrap">-----</p>
+                                            </div>
+                                            <div class="leading-5 ">
+                                                <p class="font-semibold">Date of Birth: </p>
+                                                <p id = "accountcenterPanelaccount_dateofbirth" class = "text-wrap">-----</p>
+                                            </div>
+                                            <div class="leading-5 ">
+                                                <p class="font-semibold">Address: </p>
+                                                <p id = "accountcenterPanelaccount_address" class = "text-wrap">-----</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class=" flex gap-2 mt-10 mb-5  justify-center md:justify-end w-[78vw]  lg:w-[50vw] ">
+                                    <button class="rounded-4xl editaccountModalbtn hover:bg-slate-700 bg-slate-900 text-slate-100 px-4 py-1 ">Edit Account</button>
+                                    <button class="rounded-4xl px-3 py-1 bg-slate-300 hover:bg-slate-700 hover:text-slate-100 text-slate-900">Delete Account</button>
+                                </div>
+                            </div>
+                            <div class="flex flex-col  bg-slate-200    rounded-2xl h-[70vh]   pb-10 lg:h-[40vh] xl:h-[70vh]  lg:w-[33vw]">
+                                <div class="text-end peer mt-10 mr-10">
+                                    <div >
+                                        <p class="font-semibold text-2xl">Accounts</p>
+                                    </div>
+                                    <div class=" mt-5 mb-5 flex flex-col items-end gap-2">
+                                        <input type="search" class="bg-slate-100 w-[60vw] lg:w-[25vw] rounded-4xl shadow-xs">
+                                        <div class="flex">
+                                            <select>
+                                                
+                                                <option>F. Gomez</option>
+                                                <option>Lucero</option>
+                                                <option>Dr. Zavalla</option>
+                                                <option>Zavalla</option>
+                                                <option>Arambulo</option>
+                                                <option>Anonuevo</option>
+                                                <option>P. Vallejo</option>
+                                                <option>Rizal Blvd</option>
+                                            </select>
+                                            <select class="w-[10vw] md:w-[20vw] lg:w-[10vw]">
+                                                <option>Visual Imparement</option>
+                                                <option>Mobility Imparement</option>
+                                                <option>Psychological Imparement</option>
+                                                <option>Neurological Imparement</option>
+                                                <option>Speech and Language Imparement</option>
+                                                <option>Hearing Imparement</option>
+                                                <option>Cognitive Imparement</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id = "accountlistContainer" class=" ml-auto mr-7 h-[60vh]  overflow-y-auto  md:h-[50vh] lg:h-[35vh]  text-nowrap overflow-x-hidden text-xl w-[65vw] md:w-[70vw] lg:w-[25vw] flex flex-col">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        
+                    <!--Activity Log-->
+                    <div>
+                        <div class=" gap-3 mb-15 w-[85vw] relative  flex col-span-3 items-center ">
+                            <h2 class=" relative font-poppins  text-2xl md:text-3xl  ">Activity</h2>
+                            <h2 class=" font-hanken text-2xl md:text-3xl  ">LOG</h2>
+                            <div class=" md:w-20 bg-slate-900 w-12 lg:w-25 h-0.5 sm:w-13 "></div>
+                        </div>
+                        <div>
+                            <div>
+                                <!--Table Manipulation Tools-->
+                                <div class="flex mb-2 w-[85vw] overflow-hidden lg:flex-row items-center justify-center lg:flex-nowrap  relative ">
+                                    <div class="mr-auto">
+                                        <form>
+                                            <fieldset>
+                                                <input type="text" placeholder="Search Name" class="pl-2 rounded-4xl lg:w-[40vw] md:w-[50vw] w-[65vw] h-10 focus:outline-slate-900 bg-white inset-ring-1 inset-ring-slate-200">
+                                            </fieldset>
+                                        </form>
+                                    </div>
+                                    <div class="flex ml-auto md:w-[20vw] w-[85vw] lg:w-[60vw]  lg:justify-end justify-around   items-center ">
+                                        <div class="flex  md:w-90 lg:w-20  justify-end">
+                                            <button onclick="openFilterPrev(this)" class="flex font-semibold my-auto">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+                                                    <path fill-rule="evenodd" d="M3.792 2.938A49.069 49.069 0 0 1 12 2.25c2.797 0 5.54.236 8.209.688a1.857 1.857 0 0 1 1.541 1.836v1.044a3 3 0 0 1-.879 2.121l-6.182 6.182a1.5 1.5 0 0 0-.439 1.061v2.927a3 3 0 0 1-1.658 2.684l-1.757.878A.75.75 0 0 1 9.75 21v-5.818a1.5 1.5 0 0 0-.44-1.06L3.13 7.938a3 3 0 0 1-.879-2.121V4.774c0-.897.64-1.683 1.542-1.836Z" clip-rule="evenodd" />
+                                                </svg> Filter
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="overflow-y-scroll overflow-x-hidden bg-slate-50 h-[70vh] w-[85vw] mb-15 rounded-2xl ">
+                                    <table id = "activitylogtable" class="w-[85vw] -z-20  bg-slate-50 ">
+                                        <thead class="bg-slate-900  text-slate-100  sticky top-0">
+                                            <tr>
+                                                <th>Name</th>
+                                                <th>Type</th>
+                                                <th>Date and Time</th>
+                                                <th>Activity</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class = "text-center">
+                                            
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                
+                <!--Auxilliary-->
+                <div>
+                    <!--Edit Account Pop-up-->
+                    <div class="fixed  editaccountModal hidden  top-0 z-40 items-center justify-center h-screen w-screen ">
+                        <div class="bg-stone-950/70 absolute  h-screen w-screen editaccountModalexit backdrop-blur-xs"></div>
+                        <div class = "flex items-center justify-center">
+                            
+                            <div class = "bg-slate-100 flex-col lg:flex-row items-center fixed top-[20vh] lg:top-[30vh] xl:top-[25vh] rounded-2xl flex p-2">
+                                <div class=" flex flex-col-reverse  md:flex-row lg:flex-col-reverse items-center m-2 lg:px-0 px-5  gap-2  rounded-2xl  justify-center  relative w-[64vw] md:w-[67vw] xl:w-[25vw] lg:w-[33vw]">
+                                    <input type="text" placeholder="Marasigan,  Joshua A." class="text-xl md:text-2xl font-semibold">
+                                    <div class=" shrink-0 overflow-hidden  size-40 lg:size-70 xl:size-70  border-dashed rounded-3xl border-2 border-slate-900 ">
+                                        <img id="accountinfoPicture" src="../resources/pic_sample_4.webp" class="object-cover border-dashed border-1 border-slate-900 size-50 lg:size-70 xl:size-70  text-center rounded-2xl flex items-center justify-center cursor-pointer">
+                                    </div>
+                                </div>
+                                <div class="flex flex-col ">
+                                    <div class="flex flex-col mb-5 items-start  px-5 lg:px-0 pt-5 pb-5 gap-5 rounded-2xl ">
+                                        <div class="flex   flex-col items-start gap-1 md:gap-3 lg:gap-1">
+                                            <p class="text-xl font-semibold text-nowrap w-35">Personal Informations</p>
+                                            <div class="bg-slate-900  w-65 md:w-[67vw] lg:w-[49vw] xl:w-[36vw] lg:h-[2px] h-[1.5px]"></div>
+                                        </div>
+                                        <div class="flex flex-col  md:flex-row   bg-slate-200 p-2 rounded-2xl">
+                                            <div class="flex flex-col ml-2 overflow-hidden pr-7 md:pr-0 gap-2 overflow-x-hidden">
+                                                <div class="leading-5 ">
+                                                    <p class="font-semibold">ID Number </p>
+                                                    <input type="text" placeholder="2021-302-k">
+                                                </div>
+                                                <div class="leading-5 ">
+                                                    <p class="font-semibold">Disability </p>
+                                                    <input type="text" placeholder="Visual Imparement">
+                                                </div>
+                                                <div class="leading-5 ">
+                                                    <p class="font-semibold">Position </p>
+                                                    <input type="text" placeholder="Member">
+                                                </div>
+                                                <div class="leading-5 ">
+                                                    <p class="font-semibold">Member Since </p>
+                                                    <input type="text" placeholder="September 2010">
+                                                </div>
+                                            </div>
+                                            <div class="flex flex-col ml-2 gap-2 overflow-hidden">
+                                                <div class="leading-5 ">
+                                                    <p class="font-semibold">Gender: </p>
+                                                    <input type="text" placeholder="Male">
+                                                </div>
+                                                <div class="leading-5 ">
+                                                    <p class="font-semibold">Date of Birth: </p>
+                                                    <input type="text" placeholder="9/29/05">
+                                                </div>
+                                                <div class="leading-5 ">
+                                                    <p class="font-semibold">Address: </p>
+                                                    <input type="text" placeholder="Brgy. Kanluran Zavalla Street, Bato Compound">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class=" flex gap-2    justify-center md:justify-end  ">
+                                        <button class="rounded-4xl bg-slate-900 text-slate-100 px-7 py-1 ">Save</button>
+                                        <button class="rounded-4xl bg-slate-200 text-slate-900 px-4 editaccountModalexit hover:bg-slate-300 ">Cancel</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Signup Request Pop-up-->
+                    <div class = "hidden z-40 signuprequestModal items-center justify-center">
+                        <div class = "w-screen h-screen fixed top-0 signuprequestContainerexit  bg-stone-950/70 backdrop-blur-xs"></div>
+                        <div class = "bg-slate-100 flex-col lg:flex-row items-center fixed top-[10vh] md:top-[20vh] lg:top-[30vh] rounded-2xl flex p-2">
+                            <div class=" flex flex-col-reverse  md:flex-row lg:flex-col-reverse items-center md:px-0 px-5  gap-2  rounded-2xl  justify-center  relative w-[64vw] md:w-[75vw] xl:w-[25vw] lg:w-[33vw]">
+                                <p id = "signupmodalaccount_name" class = "  text-xl md:mr-auto lg:mr-0 text-nowrap md:text-2xl">Marasigan,  Joshua A.</p>
+                                <div class=" shrink-0 md:ml-auto lg:ml-0 overflow-hidden  size-40 lg:size-70 xl:size-70  border-dashed rounded-3xl border-2 border-slate-900 ">
+                                    <img  id = "signupmodalaccount_pic"  class="object-cover border-dashed border-1 border-slate-900 size-50 lg:size-70 xl:size-70  text-center rounded-2xl flex items-center justify-center cursor-pointer">
+                                </div>
+                            </div>
+                            <div class="flex flex-col ">
+                                <div class="flex flex-col mb-5 items-start  px-5  pt-5 pb-5 gap-5 rounded-2xl ">
+                                    <div class="flex   flex-col items-start gap-1 md:gap-3 lg:gap-1">
+                                        <p class="text-xl font-semibold text-nowrap w-35">Personal Informations</p>
+                                        <div class="bg-slate-900  w-67 md:w-[78vw] lg:w-[49vw] xl:w-[50vw] lg:h-[2px] h-[1.5px]"></div>
+                                    </div>
+                                    <div class="flex flex-col  md:flex-row  w-[70vw] md:w-[77vw] lg:w-[49vw]  bg-slate-200 p-2 rounded-2xl">
+                                        <div class="flex flex-col ml-2 overflow-hidden pr-7 md:pr-5 gap-2 overflow-x-hidden">
+                                            <div class="leading-5 ">
+                                                <p  class="font-semibold">ID Number </p>
+                                                <p  id = "signupmodalaccount_id"  ></p>
+                                            </div>
+                                            <div class="leading-5 ">
+                                                <p class="font-semibold">Disability </p>
+                                                <p id = "signupmodalaccount_disabilitytype">Visual Imparement</p>
+                                            </div>
+                                            <div class="leading-5 ">
+                                                <p class="font-semibold">Position </p>
+                                                <p id = "signupmodalaccount_membersince">Member</p>
+                                            </div>
+                                            <div class="leading-5 ">
+                                                <p class="font-semibold">Gender: </p>
+                                                <p id = "signupmodalaccount_gender">Male</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex flex-col ml-2 gap-2 overflow-hidden">
+                                            <div class="leading-5 ">
+                                                <p class="font-semibold">Date of Birth: </p>
+                                                <p  id = "signupmodalaccount_dateofbirth">9/29/05</p>
+                                            </div>
+                                            <div class="leading-5 ">
+                                                <p class="font-semibold">Address: </p>
+                                                <p id = "signupmodalaccount_address" >Brgy. Kanluran Zavalla Street, Bato Compound</p>
+                                            </div>
+                                            <div class="leading-5 ">
+                                                <p class="font-semibold">Signup Date</p>
+                                                <p id = "signupmodalaccount_signupdate">November 29, 2025</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class=" flex gap-2    justify-center md:justify-end  ">
+                                    <button class="rounded-4xl bg-slate-900 text-slate-100 px-7 py-1 ">Save</button>
+                                    <button class="rounded-4xl bg-slate-200 text-slate-900 px-4 signuprequestContainerexit hover:bg-slate-300 ">Cancel</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer id="aboutUs" class="sectionContainer -z-10 relative lg:top-0 -top-[5vh] text-slate-100 bg-slate-900 overflow-y-visible">
+            <div class="md:flex md:flex-row lg:h-65 md:h-[30vh] text-poppins font-semibold lg:mx-[8vw] mx-[6vw] relative lg:-top-[1vh] top-[4vh] xl:pt-[10vh] lg:pt-[6vh] md:pt-[5vh] md:pb-0 pb-[3vh]">
+                <div class="flex flex-col flex-1 text-[2em]">
+                    <div class="flex items-start w-full relative font-hanken">CONTACT US</div>
+                    <div class="flex lg:flex-row flex-col text-[0.4em] mt-[3vh]">
+                        <div class="flex items-center flex-1 pr-[2vw]">
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="lg:size-[2.5vw] sm:size-[4vw] size-[8vw] border rounded-full bg-slate p-[0.3em] text-slate-900 bg-white">
+                                    <path fill-rule="evenodd" d="m3.855 7.286 1.067-.534a1 1 0 0 0 .542-1.046l-.44-2.858A1 1 0 0 0 4.036 2H3a1 1 0 0 0-1 1v2c0 .709.082 1.4.238 2.062a9.012 9.012 0 0 0 6.7 6.7A9.024 9.024 0 0 0 11 14h2a1 1 0 0 0 1-1v-1.036a1 1 0 0 0-.848-.988l-2.858-.44a1 1 0 0 0-1.046.542l-.534 1.067a7.52 7.52 0 0 1-4.86-4.859Z" clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                            <div class="lg:ml-[1vw] ml-[3vw]"> Mobile: (+63) 9874-213-1234 <br> Landline: (049) 123-2331 <br> Emergency: (+63) 9874-213-1234 </div>
+                        </div>
+                        <div class="flex flex-1 items-center lg:mt-0 mt-[2vh]">
+                            <div>
+                                <a href="https://www.google.com/maps/place/Kanluran+Barangay+Hall/@14.3134069,121.1050175,17z/data=!3m1!4b1!4m6!3m5!1s0x3397d9b9fdcbb529:0xf49154d1ce8773bd!8m2!3d14.3134017!4d121.1075924!16s%2Fg%2F1tdmbf4x?entry=ttu&g_ep=EgoyMDI1MDYxNS4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="lg:size-[2.5vw] sm:size-[4vw] size-[8vw] border rounded-full bg-slate p-[0.3em] text-slate-900 bg-white hover:text-white hover:bg-slate-900 hover:border-0">
+                                        <path fill-rule="evenodd" d="m7.539 14.841.003.003.002.002a.755.755 0 0 0 .912 0l.002-.002.003-.003.012-.009a5.57 5.57 0 0 0 .19-.153 15.588 15.588 0 0 0 2.046-2.082c1.101-1.362 2.291-3.342 2.291-5.597A5 5 0 0 0 3 7c0 2.255 1.19 4.235 2.292 5.597a15.591 15.591 0 0 0 2.046 2.082 8.916 8.916 0 0 0 .189.153l.012.01ZM8 8.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z" clip-rule="evenodd" />
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="lg:ml-[1vw] ml-[3vw] md:w-full sm:w-[40vw] w-[50vw]"> Address: 8475+928, Leon Arcillas Blvd, Kanluran, City of Santa Rosa, 4026 Laguna </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-1 flex md:mt-0 mt-[5vh]">
+                    <div class="flex-1 flex-col space-y-[1vh] lg:mx-[3vw]">
+                        <div class="font-hanken text-[1.3em]">GOVERMENT LINKS</div>
+                        <div class="text-[0.8em] w-fit">
+                            <a class="flex items-center hover:text-[1.1em] hover:border-b-2 hover:border-b-slate-200 transition-all duration-100 ease-in-out" href="https://op-proper.gov.ph/" target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="size-4">
+                                    <path fill-rule="evenodd" d="M6.22 4.22a.75.75 0 0 1 1.06 0l3.25 3.25a.75.75 0 0 1 0 1.06l-3.25 3.25a.75.75 0 0 1-1.06-1.06L8.94 8 6.22 5.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+                                </svg> Office Of The President </a>
+                        </div>
+                        <div class="text-[0.8em] w-fit">
+                            <a class="flex items-center hover:text-[1.1em] hover:border-b-2 hover:border-b-slate-200 transition-all duration-100 ease-in-out" href="https://www.ovp.gov.ph/" target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="size-4">
+                                    <path fill-rule="evenodd" d="M6.22 4.22a.75.75 0 0 1 1.06 0l3.25 3.25a.75.75 0 0 1 0 1.06l-3.25 3.25a.75.75 0 0 1-1.06-1.06L8.94 8 6.22 5.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+                                </svg> Office Of The Vice President </a>
+                        </div>
+                        <div class="text-[0.8em] w-fit">
+                            <a class="flex items-center hover:text-[1.1em] hover:border-b-2 hover:border-b-slate-200 transition-all duration-100 ease-in-out" href="https://legacy.senate.gov.ph/" target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="size-4">
+                                    <path fill-rule="evenodd" d="M6.22 4.22a.75.75 0 0 1 1.06 0l3.25 3.25a.75.75 0 0 1 0 1.06l-3.25 3.25a.75.75 0 0 1-1.06-1.06L8.94 8 6.22 5.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+                                </svg> Senate Of The Philippines </a>
+                        </div>
+                        <div class="text-[0.8em] w-fit">
+                            <a class="flex items-center hover:text-[1.1em] hover:border-b-2 hover:border-b-slate-200 transition-all duration-100 ease-in-out" href="https://www.congress.gov.ph/" target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="size-4">
+                                    <path fill-rule="evenodd" d="M6.22 4.22a.75.75 0 0 1 1.06 0l3.25 3.25a.75.75 0 0 1 0 1.06l-3.25 3.25a.75.75 0 0 1-1.06-1.06L8.94 8 6.22 5.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+                                </svg> House Of The Representatives </a>
+                        </div>
+                        <div class="text-[0.8em] w-fit">
+                            <a class="flex items-center hover:text-[1.1em] hover:border-b-2 hover:border-b-slate-200 transition-all duration-100 ease-in-out" href="https://sb.judiciary.gov.ph/" target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="size-4">
+                                    <path fill-rule="evenodd" d="M6.22 4.22a.75.75 0 0 1 1.06 0l3.25 3.25a.75.75 0 0 1 0 1.06l-3.25 3.25a.75.75 0 0 1-1.06-1.06L8.94 8 6.22 5.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+                                </svg> Sandigangbayan </a>
+                        </div>
+                    </div>
+                    <div class="flex-1 flex flex-col space-y-[1vh] ml-[3vw]">
+                        <div class="font-hanken text-[1.3em]">QUICK LINKS</div>
+                        <div class="text-[0.8em] w-fit">
+                            <a class="flex items-center hover:text-[1.1em] hover:border-b-2 hover:border-b-slate-200 transition-all duration-100 ease-in-out" href="">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="size-4">
+                                    <path fill-rule="evenodd" d="M6.22 4.22a.75.75 0 0 1 1.06 0l3.25 3.25a.75.75 0 0 1 0 1.06l-3.25 3.25a.75.75 0 0 1-1.06-1.06L8.94 8 6.22 5.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+                                </svg> Home </a>
+                        </div>
+                        <div class="text-[0.8em] w-fit">
+                            <a class="flex items-center hover:text-[1.1em] hover:border-b-2 hover:border-b-slate-200 transition-all duration-100 ease-in-out" href="">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="size-4">
+                                    <path fill-rule="evenodd" d="M6.22 4.22a.75.75 0 0 1 1.06 0l3.25 3.25a.75.75 0 0 1 0 1.06l-3.25 3.25a.75.75 0 0 1-1.06-1.06L8.94 8 6.22 5.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+                                </svg> Officials </a>
+                        </div>
+                        <div class="text-[0.8em] w-fit">
+                            <a class="flex items-center hover:text-[1.1em] hover:border-b-2 hover:border-b-slate-200 transition-all duration-100 ease-in-out" href="">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="size-4">
+                                    <path fill-rule="evenodd" d="M6.22 4.22a.75.75 0 0 1 1.06 0l3.25 3.25a.75.75 0 0 1 0 1.06l-3.25 3.25a.75.75 0 0 1-1.06-1.06L8.94 8 6.22 5.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+                                </svg> News </a>
+                        </div>
+                        <div class="text-[0.8em] w-fit">
+                            <a class="flex items-center hover:text-[1.1em] hover:border-b-2 hover:border-b-slate-200 transition-all duration-100 ease-in-out" href="">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="size-4">
+                                    <path fill-rule="evenodd" d="M6.22 4.22a.75.75 0 0 1 1.06 0l3.25 3.25a.75.75 0 0 1 0 1.06l-3.25 3.25a.75.75 0 0 1-1.06-1.06L8.94 8 6.22 5.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+                                </svg> Logins </a>
+                        </div>
+                        <div class="text-[0.8em] w-fit">
+                            <a class="flex items-center hover:text-[1.1em] hover:border-b-2 hover:border-b-slate-200 transition-all duration-100 ease-in-out" href="">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="size-4">
+                                    <path fill-rule="evenodd" d="M6.22 4.22a.75.75 0 0 1 1.06 0l3.25 3.25a.75.75 0 0 1 0 1.06l-3.25 3.25a.75.75 0 0 1-1.06-1.06L8.94 8 6.22 5.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+                                </svg> About Us </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex items-center h-[10vh] bg-slate-950 relative -bottom-[5vh]">
+                <div class="flex items-center flex-1 pl-[5vw] space-x-[3vw]">
+                    <h1 class="top-2  relative font-hanken text-2xl md:text-3xl font-semibold tracking-tighter">
+                        <span class="text-slate-900 bg-slate-100 font-poppins font-semibold text-[7px] md:text-[10px] tracking-[0.5vw] absolute -top-[1vh] "> BARANGAY </span> Kanluran
+                    </h1>
+                    <div>
+                        <a target="_blank" href="https://www.facebook.com/profile.php?id=61555148279432">
+                            <img src="/resources/Facebook_Logo_Secondary.png" class="size-4 md:size-8">
+                        </a>
+                    </div>
+                    <div>
+                        <a target="_blank" href="https://www.facebook.com/messages/t/203853872808930">
+                            <img src="/resources/Messenger_Icon_Secondary_White.png" class=" md:size-8 size-4">
+                        </a>
+                    </div>
+                    <div>
+                        <a target="_blank" href="mailto:brgykanluran2024@gmail.com">
+                            <img src="/resources/gmail.webp=s48-fcrop64=1,00000000ffffffff-rw.webp" class="md:size-9.5 size-7 brightness-4000 ">
+                        </a>
+                    </div>
+                </div>
+                <div class="flex flex-1 lg:pr-[5vw] justify-end">
+                    <h6 class="md:text-[1em] text-[0.8em] lg:pl-0 pl-[10vw] text-gray-400">&copy; 2025 Barangay Kanluran. All rights reserved.</h6>
+                </div>
+            </div>
+        </footer>
+
+        <!--Auxilliary-->
+        <div class="fixed bottom-5 flex justify-center md:justify-end z-50 w-screen  h-[10vh]">
+            <audio id="notificationSound" src="../resources/notification_sound.mp3" preload="auto"></audio>
+            <div id="offlineContainer" class="hidden py-2 px-4 text-slate-100 xl:h-15 md:h-[5vh]  md:mr-10 gap-2 rounded-2xl bg-slate-900/80 backdrop-blur-xs  items-center justify-center">
+                <div class="relative">
+                    <div class="absolute top-0 bg-slate-100 h-7 left-2.5 rotate-210 w-1"></div>
+                    <img class="mask-[url('../resources/wifi.svg')] size-7 mask-contain bg-slate-50">
+                </div>
+                <div class="leading-2 mt-2">
+                    <p class="font-semibold">You're Currently Offline!</p>
+                    <p class="text-sm">Check your Network Connection</p>
+                </div>
+            </div>
+            <div id="onlineContainer" class="hidden py-2 px-4 text-slate-100 xl:h-15 md:h-[5vh]  md:mr-10 gap-2 rounded-2xl bg-slate-900/80 backdrop-blur-xs  items-center justify-center">
+                <div class="relative">
+                    <img class="mask-[url('../resources/wifi.svg')] size-7 mask-contain bg-slate-50">
+                </div>
+                <div>
+                    <p class="font-semibold">Connection Established!</p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
